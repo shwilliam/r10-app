@@ -1,12 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {View, Text, TouchableOpacity} from 'react-native'
+import {useToggle} from '../hooks'
 
 const ExpandingText = ({label, children, ...props}) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, toggleIsOpen] = useToggle(false)
 
   return (
     <View {...props}>
-      <TouchableOpacity onPress={() => setIsOpen(s => !s)}>
+      <TouchableOpacity onPress={toggleIsOpen}>
         <Text>{isOpen ? '-' : '+'}</Text>
         <Text>{label}</Text>
       </TouchableOpacity>
