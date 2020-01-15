@@ -10,10 +10,16 @@ const Layout = ({children, ...props}) => (
         style={styles.scrollContainer}
         contentInsetAdjustmentBehavior="automatic"
       >
-        <View>{children}</View>
+        {children}
       </ScrollView>
     </SafeAreaView>
   </>
+)
+
+Layout.Content = ({children, ...props}) => (
+  <View style={styles.contentContainer} {...props}>
+    {children}
+  </View>
 )
 
 export default Layout

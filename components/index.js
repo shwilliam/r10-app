@@ -6,6 +6,7 @@ import Section from './Section'
 import ExpandingText from './ExpandingText'
 
 import AboutPage from './AboutPage'
+import SchedulePage from './SchedulePage'
 
 export {
   App,
@@ -15,4 +16,5 @@ export {
   Section,
   ExpandingText,
   AboutPage,
+  SchedulePage,
 }
