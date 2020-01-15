@@ -1,18 +1,11 @@
 import React from 'react'
-import {Text, StyleSheet} from 'react-native'
+import {Text} from 'react-native'
+import styles from './Title.styles'
 
 const Title = ({children, ...props}) => (
   <Text style={styles.title} {...props}>
     {children}
   </Text>
 )
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    paddingVertical: 5,
-  },
-})
 
 export default Title
