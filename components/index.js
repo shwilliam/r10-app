@@ -4,11 +4,13 @@ import Layout from './Layout'
 import Title from './Title'
 import Subtitle from './Subtitle'
 import Section from './Section'
+import Image from './Image'
 import ExpandingText from './ExpandingText'
 
 import AboutPage from './AboutPage'
 import SchedulePage from './SchedulePage'
 import EventPage from './EventPage'
+import SpeakerPage from './SpeakerPage'
 
 export {
   App,
@@ -17,8 +19,10 @@ export {
   Title,
   Subtitle,
   Section,
+  Image,
   ExpandingText,
   AboutPage,
   SchedulePage,
   EventPage,
+  SpeakerPage,
 }

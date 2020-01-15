@@ -1,9 +1,8 @@
 import React from 'react'
 import {useQuery} from '@apollo/react-hooks'
 import {gql} from 'apollo-boost'
-import {View, Text, Image} from 'react-native'
-import {Layout, Title, Subtitle} from './index'
-import styles from './EventPage.styles'
+import {View, Text} from 'react-native'
+import {Layout, Title, Subtitle, Image} from './index'
 
 const EventPage = ({id, ...props}) => {
   const {data, loading, error} = useQuery(
@@ -44,10 +43,7 @@ const EventPage = ({id, ...props}) => {
           <View>
             <Text>Presented by:</Text>
             <View>
-              <Image
-                source={{uri: data.Session.speaker.image}}
-                style={styles.speakerImage}
-              />
+              <Image src={data.Session.speaker.image} />
               <Text>{data.Session.speaker.name}</Text>
             </View>
           </View>
