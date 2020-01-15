@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, SectionList, SafeAreaView} from 'react-native'
 import {Layout, Subtitle, FavoriteButton} from './index'
-import {useSessions, useFavorites} from '../hooks'
+import {useSessions} from '../hooks'
 import styles from './SchedulePage.styles'
 
 const reduceSessionsToHeaders = (headers, session) => {
@@ -25,7 +25,6 @@ const reduceSessionsToHeaders = (headers, session) => {
 
 const SchedulePage = props => {
   const {sessions, loading, error} = useSessions()
-  const [favorites, addFavorite, removeFavorite] = useFavorites()
 
   return (
     <Layout {...props}>
@@ -43,14 +42,7 @@ const SchedulePage = props => {
                   ...(i === 0 ? styles.eventContainerFirst : {}),
                 }}
               >
-                <FavoriteButton
-                  favorite={favorites.includes(id)}
-                  onPress={() =>
-                    favorites && favorites.includes(id)
-                      ? removeFavorite(id)
-                      : addFavorite(id)
-                  }
-                />
+                <FavoriteButton id={id} />
                 <Text style={styles.eventTitle}>{title}</Text>
                 <Subtitle>{location}</Subtitle>
               </View>

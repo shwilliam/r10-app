@@ -1,6 +1,7 @@
 import React from 'react'
 import {TouchableOpacity} from 'react-native'
 import {Svg, Path} from 'react-native-svg'
+import {useFavorites} from '../hooks'
 
 const HeartIcon = ({filled = false, ...props}) => (
   <Svg
@@ -26,15 +27,22 @@ const HeartIcon = ({filled = false, ...props}) => (
   </Svg>
 )
 
-const FavoriteButton = ({
-  favorite,
-  onPress,
-  fill = '#c04534',
-  ...props
-}) => (
-  <TouchableOpacity onPress={onPress}>
-    <HeartIcon filled={favorite} fill={fill} {...props} />
-  </TouchableOpacity>
-)
+const FavoriteButton = ({id, fill = '#c04534', ...props}) => {
+  const [favorites, addFavorite, removeFavorite] = useFavorites()
+
+  return (
+    <TouchableOpacity
+      onPress={() =>
+        favorites.includes(id) ? removeFavorite(id) : addFavorite(id)
+      }
+    >
+      <HeartIcon
+        filled={favorites.includes(id)}
+        fill={fill}
+        {...props}
+      />
+    </TouchableOpacity>
+  )
+}
 
 export default FavoriteButton
