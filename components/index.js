@@ -7,6 +7,7 @@ import Section from './Section'
 import Image from './Image'
 import Modal from './Modal'
 import ExpandingText from './ExpandingText'
+import FavoriteButton from './FavoriteButton'
 
 import AboutPage from './AboutPage'
 import SchedulePage from './SchedulePage'
@@ -23,6 +24,7 @@ export {
   Image,
   Modal,
   ExpandingText,
+  FavoriteButton,
   AboutPage,
   SchedulePage,
   EventPage,

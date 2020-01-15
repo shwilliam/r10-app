@@ -1,12 +1,6 @@
 import React from 'react'
-import {
-  View,
-  Text,
-  SectionList,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native'
-import {Layout, Subtitle} from './index'
+import {View, Text, SectionList, SafeAreaView} from 'react-native'
+import {Layout, Subtitle, FavoriteButton} from './index'
 import {useSessions, useFavorites} from '../hooks'
 import styles from './SchedulePage.styles'
 
@@ -49,19 +43,14 @@ const SchedulePage = props => {
                   ...(i === 0 ? styles.eventContainerFirst : {}),
                 }}
               >
-                <TouchableOpacity
+                <FavoriteButton
+                  favorite={favorites.includes(id)}
                   onPress={() =>
                     favorites && favorites.includes(id)
                       ? removeFavorite(id)
                       : addFavorite(id)
                   }
-                >
-                  <Text>
-                    {favorites && favorites.includes(id)
-                      ? 'unfavorite'
-                      : 'favorite'}
-                  </Text>
-                </TouchableOpacity>
+                />
                 <Text style={styles.eventTitle}>{title}</Text>
                 <Subtitle>{location}</Subtitle>
               </View>
