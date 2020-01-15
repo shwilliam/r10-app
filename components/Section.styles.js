@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native'
+import CONST from './constants'
 
 const styles = StyleSheet.create({
   section: {
-    paddingVertical: 10,
+    paddingVertical: CONST.SPACING.VERTICAL,
   },
 })
 

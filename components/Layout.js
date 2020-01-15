@@ -1,11 +1,6 @@
 import React from 'react'
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  View,
-  StyleSheet,
-} from 'react-native'
+import {SafeAreaView, ScrollView, StatusBar, View} from 'react-native'
+import styles from './Layout.styles'
 
 const Layout = ({children, ...props}) => (
   <>
@@ -20,11 +15,5 @@ const Layout = ({children, ...props}) => (
     </SafeAreaView>
   </>
 )
-
-const styles = StyleSheet.create({
-  scrollContainer: {
-    height: '100%',
-  },
-})
 
 export default Layout
