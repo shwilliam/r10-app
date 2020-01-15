@@ -1,7 +1,7 @@
 import React from 'react'
 import {useQuery} from '@apollo/react-hooks'
 import {gql} from 'apollo-boost'
-import {Text} from 'react-native'
+import {View, Text} from 'react-native'
 import {Layout, ExpandingText} from './index'
 
 const AboutPage = props => {
@@ -18,17 +18,35 @@ const AboutPage = props => {
 
   return (
     <Layout {...props}>
-      {loading ? <Text>loading</Text> : null}
-      {error ? <Text>error</Text> : null}
-      {data
-        ? data.allConducts
-            .sort(({order: a}, {order: b}) => a - b)
-            .map(({id, title, description}) => (
-              <ExpandingText key={id} label={title}>
-                <Text>{description}</Text>
-              </ExpandingText>
-            ))
-        : null}
+      <View>
+        <Text>
+          R10 is a conference that focuses on just about any topic
+          related to dev.
+        </Text>
+      </View>
+
+      <View>
+        <Text>Date & Venue</Text>
+        <Text>
+          The R10 conference will take place on Tuesday, June 27, 2020
+          in Vancouver, BC.
+        </Text>
+      </View>
+
+      <View>
+        <Text>Code of Conduct</Text>
+        {loading ? <Text>loading</Text> : null}
+        {error ? <Text>error</Text> : null}
+        {data
+          ? data.allConducts
+              .sort(({order: a}, {order: b}) => a - b)
+              .map(({id, title, description}) => (
+                <ExpandingText key={id} label={title}>
+                  <Text>{description}</Text>
+                </ExpandingText>
+              ))
+          : null}
+      </View>
     </Layout>
   )
 }
