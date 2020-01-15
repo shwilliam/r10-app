@@ -2,7 +2,7 @@ import React from 'react'
 import {useQuery} from '@apollo/react-hooks'
 import {gql} from 'apollo-boost'
 import {View, Text, SectionList, SafeAreaView} from 'react-native'
-import {Layout} from './index'
+import {Layout, Subtitle} from './index'
 import styles from './SchedulePage.styles'
 
 const reduceSessionsToHeaders = (headers, session) => {
@@ -26,7 +26,7 @@ const reduceSessionsToHeaders = (headers, session) => {
 
 const SchedulePage = props => {
   const {data, loading, error} = useQuery(gql`
-    {
+    query getSessions {
       allSessions {
         id
         title
@@ -57,7 +57,7 @@ const SchedulePage = props => {
                 }}
               >
                 <Text style={styles.eventTitle}>{title}</Text>
-                <Text style={styles.eventSubtitle}>{location}</Text>
+                <Subtitle>{location}</Subtitle>
               </View>
             )}
             renderSectionHeader={({section: {title}}) => (

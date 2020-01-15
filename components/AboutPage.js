@@ -8,7 +8,7 @@ const sortByOrderKey = ({order: a}, {order: b}) => a - b
 
 const AboutPage = props => {
   const {data, loading, error} = useQuery(gql`
-    {
+    query getCodeOfConduct {
       allConducts {
         id
         order
