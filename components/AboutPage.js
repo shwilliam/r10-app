@@ -1,8 +1,8 @@
 import React from 'react'
 import {useQuery} from '@apollo/react-hooks'
 import {gql} from 'apollo-boost'
-import {View, Text} from 'react-native'
-import {Layout, ExpandingText} from './index'
+import {Text} from 'react-native'
+import {Layout, Title, Section, ExpandingText} from './index'
 
 const AboutPage = props => {
   const {data, loading, error} = useQuery(gql`
@@ -18,23 +18,23 @@ const AboutPage = props => {
 
   return (
     <Layout {...props}>
-      <View>
+      <Section>
         <Text>
           R10 is a conference that focuses on just about any topic
           related to dev.
         </Text>
-      </View>
+      </Section>
 
-      <View>
-        <Text>Date & Venue</Text>
+      <Section>
+        <Title>Date & Venue</Title>
         <Text>
           The R10 conference will take place on Tuesday, June 27, 2020
           in Vancouver, BC.
         </Text>
-      </View>
+      </Section>
 
-      <View>
-        <Text>Code of Conduct</Text>
+      <Section>
+        <Title>Code of Conduct</Title>
         {loading ? <Text>loading</Text> : null}
         {error ? <Text>error</Text> : null}
         {data
@@ -46,7 +46,7 @@ const AboutPage = props => {
                 </ExpandingText>
               ))
           : null}
-      </View>
+      </Section>
     </Layout>
   )
 }

@@ -1,7 +1,18 @@
 import App from './App'
 import ApolloWrapper from './Apollo'
 import Layout from './Layout'
-import AboutPage from './AboutPage'
+import Title from './Title'
+import Section from './Section'
 import ExpandingText from './ExpandingText'
 
-export {App, ApolloWrapper, Layout, AboutPage, ExpandingText}
+import AboutPage from './AboutPage'
+
+export {
+  App,
+  ApolloWrapper,
+  Layout,
+  Title,
+  Section,
+  ExpandingText,
+  AboutPage,
+}
