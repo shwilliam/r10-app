@@ -1,7 +1,13 @@
 import React from 'react'
-import {View, Text, SectionList, SafeAreaView} from 'react-native'
+import {
+  View,
+  Text,
+  SectionList,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native'
 import {Layout, Subtitle} from './index'
-import {useSessions} from '../hooks'
+import {useSessions, useFavorites} from '../hooks'
 import styles from './SchedulePage.styles'
 
 const reduceSessionsToHeaders = (headers, session) => {
@@ -25,6 +31,7 @@ const reduceSessionsToHeaders = (headers, session) => {
 
 const SchedulePage = props => {
   const {sessions, loading, error} = useSessions()
+  const [favorites, addFavorite, removeFavorite] = useFavorites()
 
   return (
     <Layout {...props}>
@@ -35,13 +42,26 @@ const SchedulePage = props => {
           <SectionList
             sections={sessions.reduce(reduceSessionsToHeaders, [])}
             keyExtractor={({id}) => id}
-            renderItem={({item: {title, location}}, i) => (
+            renderItem={({item: {id, title, location}}, i) => (
               <View
                 style={{
                   ...styles.eventContainer,
                   ...(i === 0 ? styles.eventContainerFirst : {}),
                 }}
               >
+                <TouchableOpacity
+                  onPress={() =>
+                    favorites && favorites.includes(id)
+                      ? removeFavorite(id)
+                      : addFavorite(id)
+                  }
+                >
+                  <Text>
+                    {favorites && favorites.includes(id)
+                      ? 'unfavorite'
+                      : 'favorite'}
+                  </Text>
+                </TouchableOpacity>
                 <Text style={styles.eventTitle}>{title}</Text>
                 <Subtitle>{location}</Subtitle>
               </View>
