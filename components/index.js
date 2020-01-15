@@ -5,6 +5,7 @@ import Title from './Title'
 import Subtitle from './Subtitle'
 import Section from './Section'
 import Image from './Image'
+import Modal from './Modal'
 import ExpandingText from './ExpandingText'
 
 import AboutPage from './AboutPage'
@@ -20,6 +21,7 @@ export {
   Subtitle,
   Section,
   Image,
+  Modal,
   ExpandingText,
   AboutPage,
   SchedulePage,
