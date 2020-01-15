@@ -1,8 +1,7 @@
 import React from 'react'
-import {useQuery} from '@apollo/react-hooks'
-import {gql} from 'apollo-boost'
 import {View, Text, SectionList, SafeAreaView} from 'react-native'
 import {Layout, Subtitle} from './index'
+import {useSessions} from '../hooks'
 import styles from './SchedulePage.styles'
 
 const reduceSessionsToHeaders = (headers, session) => {
@@ -25,29 +24,16 @@ const reduceSessionsToHeaders = (headers, session) => {
 }
 
 const SchedulePage = props => {
-  const {data, loading, error} = useQuery(gql`
-    query getSessions {
-      allSessions {
-        id
-        title
-        description
-        location
-        startTime
-      }
-    }
-  `)
+  const {sessions, loading, error} = useSessions()
 
   return (
     <Layout {...props}>
       {loading ? <Text>loading</Text> : null}
       {error ? <Text>error</Text> : null}
-      {data ? (
+      {sessions ? (
         <SafeAreaView>
           <SectionList
-            sections={data.allSessions.reduce(
-              reduceSessionsToHeaders,
-              [],
-            )}
+            sections={sessions.reduce(reduceSessionsToHeaders, [])}
             keyExtractor={({id}) => id}
             renderItem={({item: {title, location}}, i) => (
               <View

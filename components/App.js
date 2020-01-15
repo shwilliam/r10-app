@@ -1,9 +1,20 @@
 import React from 'react'
-import {ApolloWrapper, SpeakerPage} from './index'
+import {
+  ApolloWrapper,
+  SpeakerPage,
+  SchedulePage,
+  AboutPage,
+  EventPage,
+} from './index'
 
-const App = ({children, ...props}) => (
+const App = () => (
   <ApolloWrapper>
-    <SpeakerPage id="cjh2ki9vh03kn0169pbv0keou" {...props} />
+    <AboutPage />
+    {/*
+    <SchedulePage />
+    <SpeakerPage id="cjh2ki9vh03kn0169pbv0keou" />
+    <EventPage id="cjh2jemtn167f0122t01busx0" />
+    */}
   </ApolloWrapper>
 )
 

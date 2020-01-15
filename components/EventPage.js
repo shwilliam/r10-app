@@ -1,31 +1,10 @@
 import React from 'react'
-import {useQuery} from '@apollo/react-hooks'
-import {gql} from 'apollo-boost'
 import {View, Text} from 'react-native'
+import {useEvent} from '../hooks'
 import {Layout, Title, Subtitle, Image} from './index'
 
 const EventPage = ({id, ...props}) => {
-  const {data, loading, error} = useQuery(
-    gql`
-      query getSession($id: ID!) {
-        Session(id: $id) {
-          id
-          title
-          description
-          location
-          speaker {
-            id
-            name
-            bio
-            url
-            image
-          }
-          startTime
-        }
-      }
-    `,
-    {variables: {id}},
-  )
+  const {event, loading, error} = useEvent(id)
 
   return (
     <Layout {...props}>
@@ -33,18 +12,18 @@ const EventPage = ({id, ...props}) => {
 
       {error ? <Text>error</Text> : null}
 
-      {data ? (
+      {event ? (
         <View>
-          <Subtitle>{data.Session.location}</Subtitle>
-          <Title>{data.Session.title}</Title>
-          <Text>{data.Session.description}</Text>
-          <Text>{data.Session.startTime}</Text>
+          <Subtitle>{event.location}</Subtitle>
+          <Title>{event.title}</Title>
+          <Text>{event.description}</Text>
+          <Text>{event.startTime}</Text>
 
           <View>
             <Text>Presented by:</Text>
             <View>
-              <Image src={data.Session.speaker.image} />
-              <Text>{data.Session.speaker.name}</Text>
+              <Image src={event.speaker.image} />
+              <Text>{event.speaker.name}</Text>
             </View>
           </View>
         </View>

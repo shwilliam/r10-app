@@ -1,22 +1,12 @@
 import React from 'react'
-import {useQuery} from '@apollo/react-hooks'
-import {gql} from 'apollo-boost'
 import {Text} from 'react-native'
+import {useCodeOfConduct} from '../hooks'
 import {Layout, Title, Section, ExpandingText} from './index'
 
 const sortByOrderKey = ({order: a}, {order: b}) => a - b
 
 const AboutPage = props => {
-  const {data, loading, error} = useQuery(gql`
-    query getCodeOfConduct {
-      allConducts {
-        id
-        order
-        title
-        description
-      }
-    }
-  `)
+  const {codeOfConduct, loading, error} = useCodeOfConduct()
 
   return (
     <Layout {...props}>
@@ -40,8 +30,8 @@ const AboutPage = props => {
           <Title>Code of Conduct</Title>
           {loading ? <Text>loading</Text> : null}
           {error ? <Text>error</Text> : null}
-          {data
-            ? data.allConducts
+          {codeOfConduct
+            ? codeOfConduct
                 .sort(sortByOrderKey)
                 .map(({id, title, description}) => (
                   <ExpandingText key={id} label={title}>

@@ -1,23 +1,10 @@
 import React from 'react'
-import {useQuery} from '@apollo/react-hooks'
-import {gql} from 'apollo-boost'
 import {View, Text} from 'react-native'
+import {useSpeaker} from '../hooks'
 import {Layout, Title, Image} from './index'
 
 const SpeakerPage = ({id, ...props}) => {
-  const {data, loading, error} = useQuery(
-    gql`
-      query getSpeaker($id: ID!) {
-        Speaker(id: $id) {
-          name
-          bio
-          url
-          image
-        }
-      }
-    `,
-    {variables: {id}},
-  )
+  const {speaker, loading, error} = useSpeaker(id)
 
   return (
     <Layout {...props}>
@@ -25,12 +12,12 @@ const SpeakerPage = ({id, ...props}) => {
 
       {error ? <Text>error</Text> : null}
 
-      {data ? (
+      {speaker ? (
         <View>
-          <Image src={data.Speaker.image} />
-          <Title>{data.Speaker.name}</Title>
-          <Text>{data.Speaker.bio}</Text>
-          <Text>{data.Speaker.url}</Text>
+          <Image src={speaker.image} />
+          <Title>{speaker.name}</Title>
+          <Text>{speaker.bio}</Text>
+          <Text>{speaker.url}</Text>
         </View>
       ) : null}
     </Layout>
