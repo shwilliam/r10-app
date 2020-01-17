@@ -1,6 +1,5 @@
 import React from 'react'
-import {ApolloWrapper} from './components'
-import Navigator from './pages'
+import {ApolloWrapper, Navigator} from './components'
 
 const App = () => (
   <ApolloWrapper>

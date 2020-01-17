@@ -1,9 +1,13 @@
 import React from 'react'
-import {Text, SectionList, SafeAreaView} from 'react-native'
+import {
+  Text,
+  SectionList,
+  SafeAreaView,
+  TouchableOpacity,
+} from 'react-native'
 import {useSessions} from '../hooks'
 import {Layout, Subtitle, FavoriteButton} from '../components'
 import styles from './Schedule.styles'
-import {TouchableOpacity} from 'react-native-gesture-handler'
 
 const twoDigit = t => (t > 9 ? t : `0${t}`)
 

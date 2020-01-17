@@ -1,4 +1,5 @@
 import ApolloWrapper from './ApolloWrapper'
+import Navigator from './Navigator'
 import Layout from './Layout'
 import Title from './Title'
 import Subtitle from './Subtitle'
@@ -10,6 +11,7 @@ import FavoriteButton from './FavoriteButton'
 
 export {
   ApolloWrapper,
+  Navigator,
   Layout,
   Title,
   Subtitle,
