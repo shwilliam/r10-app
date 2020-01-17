@@ -1,8 +1,8 @@
 import React from 'react'
 import {View, Text, SectionList, SafeAreaView} from 'react-native'
-import {Layout, Subtitle, FavoriteButton} from './index'
 import {useSessions} from '../hooks'
-import styles from './SchedulePage.styles'
+import {Layout, Subtitle, FavoriteButton} from '../components'
+import styles from './Schedule.styles'
 
 const reduceSessionsToHeaders = (headers, session) => {
   const sectionIndex = headers.findIndex(
@@ -23,7 +23,7 @@ const reduceSessionsToHeaders = (headers, session) => {
   return headers
 }
 
-const SchedulePage = props => {
+const Schedule = props => {
   const {sessions, loading, error} = useSessions()
 
   return (
@@ -57,4 +57,4 @@ const SchedulePage = props => {
   )
 }
 
-export default SchedulePage
+export default Schedule

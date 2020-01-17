@@ -1,9 +1,9 @@
 import React from 'react'
 import {View, Text, TouchableOpacity} from 'react-native'
 import {useEvent, useToggle} from '../hooks'
-import {Layout, Title, Subtitle, Image, Modal} from './index'
+import {Layout, Title, Subtitle, Image, Modal} from '../components'
 
-const EventPage = ({id, ...props}) => {
+const Event = ({id, ...props}) => {
   const {event, loading, error} = useEvent(id)
   const [modalOpen, toggleModal] = useToggle()
 
@@ -40,4 +40,4 @@ const EventPage = ({id, ...props}) => {
   )
 }
 
-export default EventPage
+export default Event

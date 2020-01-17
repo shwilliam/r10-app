@@ -1,11 +1,11 @@
 import React from 'react'
 import {Text} from 'react-native'
 import {useCodeOfConduct} from '../hooks'
-import {Layout, Title, Section, ExpandingText} from './index'
+import {Layout, Title, Section, ExpandingText} from '../components'
 
 const sortByOrderKey = ({order: a}, {order: b}) => a - b
 
-const AboutPage = props => {
+const About = props => {
   const {codeOfConduct, loading, error} = useCodeOfConduct()
 
   return (
@@ -45,4 +45,4 @@ const AboutPage = props => {
   )
 }
 
-export default AboutPage
+export default About

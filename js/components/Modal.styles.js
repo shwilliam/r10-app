@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native'
-import CONST from './constants'
+import CONST from '../constants'
 
 const styles = StyleSheet.create({
-  scrollContainer: {
+  modal: {
+    zIndex: 999,
     height: '100%',
-  },
-  contentContainer: {
+    paddingVertical: CONST.SPACING.VERTICAL,
     paddingHorizontal: CONST.SPACING.HORIZONTAL,
+    backgroundColor: '#fff',
   },
 })
 
