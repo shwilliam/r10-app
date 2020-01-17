@@ -3,8 +3,10 @@ import {View, Text, TouchableOpacity} from 'react-native'
 import {useEvent, useToggle} from '../hooks'
 import {Layout, Title, Subtitle, Image, Modal} from '../components'
 
-const Event = ({id, ...props}) => {
-  const {event, loading, error} = useEvent(id)
+const Event = ({navigation, ...props}) => {
+  const {event, loading, error} = useEvent(
+    navigation.getParam('id', 'cjh2jemtn167f0122t01busx0'),
+  )
   const [modalOpen, toggleModal] = useToggle()
 
   return (

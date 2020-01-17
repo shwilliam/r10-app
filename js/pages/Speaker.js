@@ -3,8 +3,10 @@ import {View, Text} from 'react-native'
 import {useSpeaker} from '../hooks'
 import {Layout, Title, Image} from '../components'
 
-const Speaker = ({id, ...props}) => {
-  const {speaker, loading, error} = useSpeaker(id)
+const Speaker = ({navigation, ...props}) => {
+  const {speaker, loading, error} = useSpeaker(
+    navigation.getParam('id', 'cjh2ki9vh03kn0169pbv0keou'),
+  )
 
   return (
     <Layout {...props}>

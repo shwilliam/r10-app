@@ -1,6 +1,8 @@
+import Navigator from './Navigator'
 import About from './About'
-import Schedule from './Schedule'
 import Event from './Event'
+import Schedule from './Schedule'
 import Speaker from './Speaker'
 
-export {About, Schedule, Event, Speaker}
+export default Navigator
+export {About, Event, Schedule, Speaker}

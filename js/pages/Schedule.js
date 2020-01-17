@@ -3,6 +3,7 @@ import {View, Text, SectionList, SafeAreaView} from 'react-native'
 import {useSessions} from '../hooks'
 import {Layout, Subtitle, FavoriteButton} from '../components'
 import styles from './Schedule.styles'
+import {TouchableOpacity} from 'react-native-gesture-handler'
 
 const reduceSessionsToHeaders = (headers, session) => {
   const sectionIndex = headers.findIndex(
@@ -23,7 +24,7 @@ const reduceSessionsToHeaders = (headers, session) => {
   return headers
 }
 
-const Schedule = props => {
+const Schedule = ({navigation, ...props}) => {
   const {sessions, loading, error} = useSessions()
 
   return (
@@ -36,7 +37,8 @@ const Schedule = props => {
             sections={sessions.reduce(reduceSessionsToHeaders, [])}
             keyExtractor={({id}) => id}
             renderItem={({item: {id, title, location}}, i) => (
-              <View
+              <TouchableOpacity
+                onPress={() => navigation.push('Event', {id})}
                 style={{
                   ...styles.eventContainer,
                   ...(i === 0 ? styles.eventContainerFirst : {}),
@@ -45,7 +47,7 @@ const Schedule = props => {
                 <FavoriteButton id={id} />
                 <Text style={styles.eventTitle}>{title}</Text>
                 <Subtitle>{location}</Subtitle>
-              </View>
+              </TouchableOpacity>
             )}
             renderSectionHeader={({section: {title}}) => (
               <Text style={styles.eventHeader}>{title}</Text>
