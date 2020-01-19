@@ -23,15 +23,16 @@ const formatTime = t => {
 }
 
 const reduceSessionsToHeaders = (headers, session) => {
+  const formattedTime = formatTime(session.startTime)
   const sectionIndex = headers.findIndex(
-    ({title}) => title === session.startTime,
+    ({title}) => title === formattedTime,
   )
 
   if (sectionIndex === -1)
     return [
       ...headers,
       {
-        title: formatTime(session.startTime),
+        title: formattedTime,
         data: [session],
       },
     ]
