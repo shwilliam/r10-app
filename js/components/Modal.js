@@ -10,7 +10,7 @@ import styles from './Modal.styles'
 const Modal = ({open = false, onClose, children, ...props}) => (
   <ReactModal
     animationType="slide"
-    transparent="false"
+    transparent={false}
     visible={open}
     {...props}
   >
