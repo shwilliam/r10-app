@@ -1,10 +1,16 @@
 import React from 'react'
-import {ApolloWrapper, Navigator} from './components'
+import {
+  ApolloProvider,
+  FavoritesProvider,
+  Navigator,
+} from './components'
 
 const App = () => (
-  <ApolloWrapper>
-    <Navigator />
-  </ApolloWrapper>
+  <ApolloProvider>
+    <FavoritesProvider>
+      <Navigator />
+    </FavoritesProvider>
+  </ApolloProvider>
 )
 
 export default App

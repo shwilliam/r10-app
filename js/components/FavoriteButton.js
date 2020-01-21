@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import {useFavorites} from '../hooks'
+import {FavoritesContext} from '../context'
 
 const FavoriteButton = ({id, color = '#c04534', ...props}) => {
-  const [favorites, addFavorite, removeFavorite] = useFavorites()
+  const {favorites, addFavorite, removeFavorite} = useContext(
+    FavoritesContext,
+  )
 
   return (
     <TouchableOpacity

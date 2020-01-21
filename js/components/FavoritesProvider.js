@@ -1,7 +1,8 @@
+import React, {useState, useEffect} from 'react'
 import AsyncStorage from '@react-native-community/async-storage'
-import {useEffect, useState} from 'react'
+import {FavoritesContext} from '../context'
 
-const useFavorites = () => {
+const FavoritesProvider = ({children, ...props}) => {
   const [favorites, setFavorites] = useState([])
 
   const getFavorites = async () => {
@@ -55,7 +56,15 @@ const useFavorites = () => {
     updateFavorites()
   }, [])
 
-  return [favorites, addFavorite, removeFavorite]
+  return (
+    <FavoritesContext.Provider
+      value={{favorites, addFavorite, removeFavorite}}
+      {...props}
+    >
+      {children}
+    </FavoritesContext.Provider>
+  )
 }
 
-export default useFavorites
+export {FavoritesContext}
+export default FavoritesProvider

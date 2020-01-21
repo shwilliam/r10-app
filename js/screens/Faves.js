@@ -1,10 +1,11 @@
-import React from 'react'
-import {useSessions, useFavorites} from '../hooks'
+import React, {useContext} from 'react'
+import {useSessions} from '../hooks'
+import {FavoritesContext} from '../context'
 import {groupEventsByTime} from '../utils'
 import {Layout, SectionList} from '../components'
 
 const Faves = ({navigation, ...props}) => {
-  const [favorites] = useFavorites()
+  const {favorites} = useContext(FavoritesContext)
   const {sessions, loading, error} = useSessions()
 
   return (

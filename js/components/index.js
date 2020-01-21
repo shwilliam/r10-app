@@ -1,4 +1,5 @@
-import ApolloWrapper from './ApolloWrapper'
+import ApolloProvider from './ApolloProvider'
+import FavoritesProvider from './FavoritesProvider'
 import Navigator from './Navigator'
 import Layout from './Layout'
 import Title from './Title'
@@ -11,7 +12,8 @@ import FavoriteButton from './FavoriteButton'
 import SectionList from './SectionList'
 
 export {
-  ApolloWrapper,
+  ApolloProvider,
+  FavoritesProvider,
   Navigator,
   Layout,
   Title,

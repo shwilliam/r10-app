@@ -3,7 +3,6 @@ import useCodeOfConduct from './useCodeOfConduct'
 import useSessions from './useSessions'
 import useSpeaker from './useSpeaker'
 import useEvent from './useEvent'
-import useFavorites from './useFavorites'
 
 export {
   useToggle,
@@ -11,5 +10,4 @@ export {
   useSessions,
   useSpeaker,
   useEvent,
-  useFavorites,
 }
