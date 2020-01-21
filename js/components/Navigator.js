@@ -7,7 +7,10 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 const ScheduleScreen = createStackNavigator({
   Schedule,
-  Event,
+  Event: {
+    screen: Event,
+    navigationOptions: {headerBackTitleVisible: false},
+  },
   Speaker,
 })
 const AboutScreen = createStackNavigator({About})
