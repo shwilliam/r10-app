@@ -8,6 +8,7 @@ import Image from './Image'
 import Modal from './Modal'
 import ExpandingText from './ExpandingText'
 import FavoriteButton from './FavoriteButton'
+import SectionList from './SectionList'
 
 export {
   ApolloWrapper,
@@ -20,4 +21,5 @@ export {
   Modal,
   ExpandingText,
   FavoriteButton,
+  SectionList,
 }

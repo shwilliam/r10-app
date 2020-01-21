@@ -1,9 +1,10 @@
 import React from 'react'
-import {useSessions} from '../hooks'
+import {useSessions, useFavorites} from '../hooks'
 import {groupEventsByTime} from '../utils'
 import {Layout, SectionList} from '../components'
 
-const Schedule = ({navigation, ...props}) => {
+const Faves = ({navigation, ...props}) => {
+  const [favorites] = useFavorites()
   const {sessions, loading, error} = useSessions()
 
   return (
@@ -11,7 +12,9 @@ const Schedule = ({navigation, ...props}) => {
       <SectionList
         loading={loading}
         error={error}
-        sections={sessions.reduce(groupEventsByTime, [])}
+        sections={sessions
+          .filter(({id}) => favorites.includes(id))
+          .reduce(groupEventsByTime, [])}
         renderItem={({item: {id, title, location}}, i) => (
           <SectionList.Item
             id={id}
@@ -27,4 +30,4 @@ const Schedule = ({navigation, ...props}) => {
   )
 }
 
-export default Schedule
+export default Faves

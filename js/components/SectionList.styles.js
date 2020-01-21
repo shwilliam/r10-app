@@ -2,22 +2,22 @@ import {StyleSheet} from 'react-native'
 import CONST from '../constants'
 
 const styles = StyleSheet.create({
-  eventHeader: {
+  sectionHeader: {
     fontWeight: 'bold',
     paddingVertical: CONST.SPACING.VERTICAL / 2,
     paddingHorizontal: 5,
     backgroundColor: CONST.COLOR.LIGHT_GREY,
   },
-  eventContainer: {
+  itemContainer: {
     paddingVertical: CONST.SPACING.VERTICAL,
     paddingHorizontal: 5,
     borderTopWidth: 2,
     borderColor: CONST.COLOR.LIGHT_GREY,
   },
-  eventContainerFirst: {
+  itemContainerFirst: {
     borderTopWidth: 0,
   },
-  eventTitle: {
+  itemTitle: {
     fontWeight: 'bold',
     paddingVertical: CONST.SPACING.VERTICAL / 4,
   },

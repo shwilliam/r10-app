@@ -2,7 +2,7 @@ import React from 'react'
 import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
-import {Speaker, Schedule, About, Event} from '../screens'
+import {Speaker, Schedule, About, Event, Faves} from '../screens'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 const ScheduleScreen = createStackNavigator({
@@ -11,6 +11,7 @@ const ScheduleScreen = createStackNavigator({
   Speaker,
 })
 const AboutScreen = createStackNavigator({About})
+const FavesScreen = createStackNavigator({Faves})
 
 const Navigator = createBottomTabNavigator(
   {
@@ -33,17 +34,14 @@ const Navigator = createBottomTabNavigator(
     //     ),
     //   },
     // },
-    // Faves: {
-    //   screen: FavesScreen,
-    //   navigationOptions: {
-    //     tabBarIcon: ({tintColor}) => (
-    //       <Icon
-    //         name="ios-heart"
-    //         color={tintColor}
-    //       />
-    //     ),
-    //   },
-    // },
+    Faves: {
+      screen: FavesScreen,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => (
+          <Icon name="ios-heart" color={tintColor} />
+        ),
+      },
+    },
     About: {
       screen: AboutScreen,
       navigationOptions: {
