@@ -11,12 +11,16 @@ const FavoriteButton = ({id, color = '#c04534', ...props}) => {
   return (
     <TouchableOpacity
       onPress={() =>
-        favorites.includes(id) ? removeFavorite(id) : addFavorite(id)
+        favorites && favorites.includes(id)
+          ? removeFavorite(id)
+          : addFavorite(id)
       }
     >
       <Icon
         name={
-          favorites.includes(id) ? 'ios-heart' : 'ios-heart-empty'
+          favorites && favorites.includes(id)
+            ? 'ios-heart'
+            : 'ios-heart-empty'
         }
         color={color}
         {...props}

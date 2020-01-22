@@ -1,64 +1,45 @@
 import React, {useState, useEffect} from 'react'
-import AsyncStorage from '@react-native-community/async-storage'
 import {FavoritesContext} from '../context'
+import {useAsyncStorage} from '../hooks'
 
 const FavoritesProvider = ({children, ...props}) => {
+  const [getLocalFavorites, setLocalFavorites] = useAsyncStorage(
+    'favorites',
+  )
   const [favorites, setFavorites] = useState([])
 
-  const getFavorites = async () => {
-    try {
-      const favorites = await AsyncStorage.getItem('favorites')
-      return JSON.parse(favorites) || []
-    } catch (e) {
-      // error reading favorites
-    }
-  }
-
-  const updateFavorites = async () => {
-    const favorites = await getFavorites()
-    setFavorites(favorites)
-  }
+  const updateFavorites = async () =>
+    setFavorites((await getLocalFavorites()) || [])
 
   const addFavorite = async id => {
-    try {
-      if (!favorites.includes(id))
-        await AsyncStorage.setItem(
-          'favorites',
-          JSON.stringify([...favorites, id]),
-        )
-    } catch (e) {
-      // error adding favorite
-    }
+    if (!favorites.includes(id))
+      await setLocalFavorites([...favorites, id])
     updateFavorites()
   }
 
   const removeFavorite = async id => {
     const i = favorites.indexOf(id)
 
-    try {
-      if (i !== -1) {
-        const updatedFavorites = [...favorites]
-
-        updatedFavorites.splice(i, 1)
-
-        await AsyncStorage.setItem(
-          'favorites',
-          JSON.stringify(updatedFavorites),
-        )
-      }
-    } catch (e) {
-      // error adding favorite
+    if (i !== -1) {
+      const updatedFavorites = [...favorites]
+      updatedFavorites.splice(i, 1)
+      await setLocalFavorites(updatedFavorites)
     }
     updateFavorites()
   }
 
   useEffect(() => {
+    // update favorites state on mount
     updateFavorites()
   }, [])
 
   return (
     <FavoritesContext.Provider
-      value={{favorites, addFavorite, removeFavorite}}
+      value={{
+        favorites,
+        addFavorite,
+        removeFavorite,
+      }}
       {...props}
     >
       {children}
