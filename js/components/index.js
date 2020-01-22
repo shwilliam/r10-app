@@ -10,6 +10,7 @@ import Modal from './Modal'
 import ExpandingText from './ExpandingText'
 import FavoriteButton from './FavoriteButton'
 import SectionList from './SectionList'
+import HeroLogo from './HeroLogo'
 
 export {
   ApolloProvider,
@@ -24,4 +25,5 @@ export {
   ExpandingText,
   FavoriteButton,
   SectionList,
+  HeroLogo,
 }

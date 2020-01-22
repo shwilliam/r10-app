@@ -1,7 +1,13 @@
 import React from 'react'
 import {Text} from 'react-native'
 import {useCodeOfConduct} from '../hooks'
-import {Layout, Title, Section, ExpandingText} from '../components'
+import {
+  Layout,
+  Title,
+  Section,
+  ExpandingText,
+  HeroLogo,
+} from '../components'
 
 const sortByOrderKey = ({order: a}, {order: b}) => a - b
 
@@ -11,6 +17,7 @@ const About = props => {
   return (
     <Layout {...props}>
       <Layout.Content>
+        <HeroLogo />
         <Section>
           <Text>
             R10 is a conference that focuses on just about any topic
