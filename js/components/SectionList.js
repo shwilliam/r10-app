@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   SectionList as ReactSectionList,
   SafeAreaView,
+  View,
 } from 'react-native'
 import {FavoriteButton, Subtitle} from './index'
 import styles from './SectionList.styles'
@@ -48,9 +49,14 @@ SectionList.Item = ({
     }}
     {...props}
   >
-    <FavoriteButton id={id} />
-    <Text style={styles.itemTitle}>{children}</Text>
-    <Subtitle>{subtitle}</Subtitle>
+    <View style={styles.itemContent}>
+      <Text style={styles.itemTitle}>{children}</Text>
+      <Subtitle>{subtitle}</Subtitle>
+    </View>
+
+    <View style={styles.itemAction}>
+      <FavoriteButton id={id} />
+    </View>
   </TouchableOpacity>
 )
 
