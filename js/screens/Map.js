@@ -1,11 +1,12 @@
 import React from 'react'
 import {Layout} from '../components'
 import MapView from 'react-native-maps'
-import {StyleSheet} from 'react-native'
+import {StyleSheet, Dimensions} from 'react-native'
 
 const styles = StyleSheet.create({
   map: {
-    height: 500,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
 })
 
