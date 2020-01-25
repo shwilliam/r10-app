@@ -1,15 +1,24 @@
 import React from 'react'
-import {View, Text, TouchableOpacity} from 'react-native'
+import {View, TouchableOpacity} from 'react-native'
 import {useToggle} from '../hooks'
+import {Subtitle} from './index'
+import styles from './ExpandingText.styles'
 
 const ExpandingText = ({label, children, ...props}) => {
   const [isOpen, toggleIsOpen] = useToggle(false)
 
   return (
     <View {...props}>
-      <TouchableOpacity onPress={toggleIsOpen}>
-        <Text>{isOpen ? '-' : '+'}</Text>
-        <Text>{label}</Text>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={toggleIsOpen}
+      >
+        <View style={styles.iconContainer}>
+          <Subtitle variant="secondary">
+            {isOpen ? '-' : '+'}
+          </Subtitle>
+        </View>
+        <Subtitle variant="secondary">{label}</Subtitle>
       </TouchableOpacity>
       {isOpen ? children : null}
     </View>

@@ -42,7 +42,9 @@ const About = props => {
                 .sort(sortByOrderKey)
                 .map(({id, title, description}) => (
                   <ExpandingText key={id} label={title}>
-                    <Text>{description}</Text>
+                    <Section>
+                      <Text>{description}</Text>
+                    </Section>
                   </ExpandingText>
                 ))
             : null}

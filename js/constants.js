@@ -13,9 +13,11 @@ const CONSTS = {
   FONT: {
     SIZE: {
       TITLE: 30,
+      SUBTITLE: 17.5,
     },
     COLOR: {
       SECONDARY: '#999',
+      ACCENT: '#9963ea',
     },
   },
 }
