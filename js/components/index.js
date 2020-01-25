@@ -15,6 +15,7 @@ import HeroLogo from './HeroLogo'
 import Map from './Map'
 import Icon from './Icon'
 import Button from './Button'
+import Header from './Header'
 
 export {
   ApolloProvider,
@@ -34,4 +35,5 @@ export {
   Map,
   Icon,
   Button,
+  Header,
 }

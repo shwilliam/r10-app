@@ -3,18 +3,44 @@ import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 import {Schedule, About, Event, Faves, Map} from '../screens'
-import {Icon} from '../components'
+import {Header, Icon} from '../components'
+
+const navigationOptions = {
+  headerBackTitleVisible: false,
+  header: props => <Header {...props} />,
+  headerStyle: {
+    backgroundColor: 'transparent',
+  },
+}
 
 const ScheduleScreen = createStackNavigator({
-  Schedule,
+  Schedule: {
+    screen: Schedule,
+    navigationOptions,
+  },
   Event: {
     screen: Event,
-    navigationOptions: {headerBackTitleVisible: false},
+    navigationOptions,
   },
 })
-const AboutScreen = createStackNavigator({About})
-const FavesScreen = createStackNavigator({Faves})
-const MapScreen = createStackNavigator({Map})
+const AboutScreen = createStackNavigator({
+  About: {
+    screen: About,
+    navigationOptions,
+  },
+})
+const FavesScreen = createStackNavigator({
+  Faves: {
+    screen: Faves,
+    navigationOptions,
+  },
+})
+const MapScreen = createStackNavigator({
+  Map: {
+    screen: Map,
+    navigationOptions,
+  },
+})
 
 const Navigator = createBottomTabNavigator(
   {
