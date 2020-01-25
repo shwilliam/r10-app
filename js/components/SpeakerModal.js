@@ -1,6 +1,14 @@
 import React from 'react'
-import {View, Text} from 'react-native'
-import {Modal, Layout, Title, Subtitle, Image, Section} from './index'
+import {View, Text, Linking} from 'react-native'
+import {
+  Modal,
+  Layout,
+  Title,
+  Subtitle,
+  Image,
+  Section,
+  Button,
+} from './index'
 import styles from './SpeakerModal.styles'
 
 const SpeakerModal = ({
@@ -29,7 +37,10 @@ const SpeakerModal = ({
 
         <Section>
           <Text>{children}</Text>
-          <Text>{wikiUrl}</Text>
+
+          <Button onPress={() => Linking.openURL(wikiUrl)}>
+            Read More on Wikipedia
+          </Button>
         </Section>
       </Layout.Content>
     </Layout.Content>

@@ -1,22 +1,26 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {View, Text, TouchableOpacity} from 'react-native'
 import {formatTimestamp} from '../utils'
 import {useEvent, useToggle} from '../hooks'
+import {FavoritesContext} from '../context'
 import {
   Layout,
   Title,
   Subtitle,
   Image,
-  Modal,
   FavoriteButton,
+  Button,
   Section,
   SpeakerModal,
 } from '../components'
 import styles from './Event.styles'
 
 const Event = ({navigation, ...props}) => {
-  const {event, loading, error} = useEvent(
-    navigation.getParam('id', 'cjh2jemtn167f0122t01busx0'),
+  // TODO: remove default url params
+  const id = navigation.getParam('id', 'cjh2jemtn167f0122t01busx0')
+  const {event, loading, error} = useEvent(id)
+  const {favorites, addFavorite, removeFavorite} = useContext(
+    FavoritesContext,
   )
   const [modalOpen, toggleModal] = useToggle()
 
@@ -31,8 +35,7 @@ const Event = ({navigation, ...props}) => {
           <View>
             <View style={styles.sessionHeader}>
               <Subtitle>{event.location}</Subtitle>
-              {/* TODO: disable heart */}
-              <FavoriteButton id={event.id} />
+              <FavoriteButton id={event.id} disabled />
             </View>
 
             <Title>{event.title}</Title>
@@ -55,7 +58,18 @@ const Event = ({navigation, ...props}) => {
                 <Text>{event.speaker.name}</Text>
               </TouchableOpacity>
 
-              {/* TODO: 'Remove from Faves' btn */}
+              <Button
+                onPress={() =>
+                  favorites && favorites.includes(id)
+                    ? removeFavorite(id)
+                    : addFavorite(id)
+                }
+              >
+                {favorites && favorites.includes(id)
+                  ? 'Remove from'
+                  : 'Add to'}{' '}
+                favorites
+              </Button>
             </Section>
           </View>
           <SpeakerModal
