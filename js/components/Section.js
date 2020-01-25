@@ -2,8 +2,15 @@ import React from 'react'
 import {View} from 'react-native'
 import styles from './Section.styles'
 
-const Section = ({children, ...props}) => (
-  <View style={styles.section} {...props}>
+const Section = ({centered = false, children, ...props}) => (
+  <View
+    style={
+      centered
+        ? {...styles.section, ...styles.sectionCentered}
+        : styles.section
+    }
+    {...props}
+  >
     {children}
   </View>
 )

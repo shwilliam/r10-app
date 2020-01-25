@@ -2,7 +2,7 @@ import React from 'react'
 import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
-import {Speaker, Schedule, About, Event, Faves, Map} from '../screens'
+import {Schedule, About, Event, Faves, Map} from '../screens'
 import {Icon} from '../components'
 
 const ScheduleScreen = createStackNavigator({
@@ -11,7 +11,6 @@ const ScheduleScreen = createStackNavigator({
     screen: Event,
     navigationOptions: {headerBackTitleVisible: false},
   },
-  Speaker,
 })
 const AboutScreen = createStackNavigator({About})
 const FavesScreen = createStackNavigator({Faves})

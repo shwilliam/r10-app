@@ -10,6 +10,7 @@ import {
   Modal,
   FavoriteButton,
   Section,
+  SpeakerModal,
 } from '../components'
 import styles from './Event.styles'
 
@@ -57,11 +58,16 @@ const Event = ({navigation, ...props}) => {
               {/* TODO: 'Remove from Faves' btn */}
             </Section>
           </View>
-          <Modal open={modalOpen} onClose={toggleModal}>
-            <Image src={event.speaker.image} />
-            <Text>{event.speaker.name}</Text>
+          <SpeakerModal
+            open={modalOpen}
+            onClose={toggleModal}
+            imageUrl={event.speaker.image}
+            title={event.speaker.name}
+            wikiUrl={event.speaker.url}
+          >
             <Text>{event.speaker.bio}</Text>
-          </Modal>
+          </SpeakerModal>
+          <Image />
         </Layout.Content>
       ) : null}
     </Layout>

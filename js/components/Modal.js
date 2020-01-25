@@ -7,20 +7,20 @@ import {
 } from 'react-native'
 import styles from './Modal.styles'
 
-const Modal = ({open = false, onClose, children, ...props}) => (
+const Modal = ({open = false, children}) => (
   <ReactModal
     animationType="slide"
     transparent={false}
     visible={open}
-    {...props}
   >
-    <SafeAreaView style={styles.modal}>
-      <TouchableOpacity onPress={onClose}>
-        <Text>✕</Text>
-      </TouchableOpacity>
-      {children}
-    </SafeAreaView>
+    <SafeAreaView style={styles.modal}>{children}</SafeAreaView>
   </ReactModal>
+)
+
+Modal.CloseButton = ({onClose}) => (
+  <TouchableOpacity onPress={onClose} style={styles.buttonClose}>
+    <Text style={styles.buttonCloseText}>✕</Text>
+  </TouchableOpacity>
 )
 
 export default Modal

@@ -7,6 +7,7 @@ import Subtitle from './Subtitle'
 import Section from './Section'
 import Image from './Image'
 import Modal from './Modal'
+import SpeakerModal from './SpeakerModal'
 import ExpandingText from './ExpandingText'
 import FavoriteButton from './FavoriteButton'
 import SectionList from './SectionList'
@@ -24,6 +25,7 @@ export {
   Section,
   Image,
   Modal,
+  SpeakerModal,
   ExpandingText,
   FavoriteButton,
   SectionList,

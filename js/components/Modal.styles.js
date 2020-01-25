@@ -7,7 +7,14 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingVertical: CONST.SPACING.VERTICAL,
     paddingHorizontal: CONST.SPACING.HORIZONTAL,
-    backgroundColor: '#fff',
+  },
+  buttonClose: {
+    position: 'absolute',
+    top: CONST.SPACING.VERTICAL * 0.5,
+    left: CONST.SPACING.HORIZONTAL,
+  },
+  buttonCloseText: {
+    color: '#fff',
   },
 })
 
