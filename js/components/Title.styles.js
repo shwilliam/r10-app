@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: CONST.FONT.SIZE.TITLE,
     fontWeight: 'bold',
-    paddingVertical: 5,
+    marginVertical: CONST.SPACING.VERTICAL,
   },
 })
 

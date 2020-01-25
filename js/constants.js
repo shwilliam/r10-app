@@ -18,6 +18,7 @@ const CONSTS = {
     COLOR: {
       SECONDARY: '#999',
       ACCENT: '#9963ea',
+      RED: '#cf392a',
     },
   },
 }

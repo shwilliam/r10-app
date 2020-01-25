@@ -1,7 +1,17 @@
 import React from 'react'
 import {View, Text, TouchableOpacity} from 'react-native'
+import {formatTimestamp} from '../utils'
 import {useEvent, useToggle} from '../hooks'
-import {Layout, Title, Subtitle, Image, Modal} from '../components'
+import {
+  Layout,
+  Title,
+  Subtitle,
+  Image,
+  Modal,
+  FavoriteButton,
+  Section,
+} from '../components'
+import styles from './Event.styles'
 
 const Event = ({navigation, ...props}) => {
   const {event, loading, error} = useEvent(
@@ -16,27 +26,43 @@ const Event = ({navigation, ...props}) => {
       {error ? <Text>error</Text> : null}
 
       {event ? (
-        <>
+        <Layout.Content>
           <View>
-            <Subtitle>{event.location}</Subtitle>
-            <Title>{event.title}</Title>
-            <Text>{event.description}</Text>
-            <Text>{event.startTime}</Text>
+            <View style={styles.sessionHeader}>
+              <Subtitle>{event.location}</Subtitle>
+              {/* TODO: disable heart */}
+              <FavoriteButton id={event.id} />
+            </View>
 
-            <View>
-              <Text>Presented by:</Text>
-              <TouchableOpacity onPress={toggleModal}>
+            <Title>{event.title}</Title>
+
+            <Text style={styles.sessionTime}>
+              {formatTimestamp(event.startTime)}
+            </Text>
+
+            <Section>
+              <Text>{event.description}</Text>
+            </Section>
+
+            <Section>
+              <Subtitle>Presented by:</Subtitle>
+              <TouchableOpacity
+                onPress={toggleModal}
+                style={styles.sessionSpeakerCard}
+              >
                 <Image src={event.speaker.image} />
                 <Text>{event.speaker.name}</Text>
               </TouchableOpacity>
-            </View>
+
+              {/* TODO: 'Remove from Faves' btn */}
+            </Section>
           </View>
           <Modal open={modalOpen} onClose={toggleModal}>
             <Image src={event.speaker.image} />
             <Text>{event.speaker.name}</Text>
             <Text>{event.speaker.bio}</Text>
           </Modal>
-        </>
+        </Layout.Content>
       ) : null}
     </Layout>
   )

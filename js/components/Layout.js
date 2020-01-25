@@ -6,10 +6,7 @@ const Layout = ({children, ...props}) => (
   <>
     <StatusBar barStyle="dark-content" />
     <SafeAreaView {...props}>
-      <ScrollView
-        style={styles.scrollContainer}
-        contentInsetAdjustmentBehavior="automatic"
-      >
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         {children}
       </ScrollView>
     </SafeAreaView>
