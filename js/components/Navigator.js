@@ -3,7 +3,7 @@ import {createAppContainer} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 import {Speaker, Schedule, About, Event, Faves, Map} from '../screens'
-import Icon from 'react-native-vector-icons/Ionicons'
+import {Icon} from '../components'
 
 const ScheduleScreen = createStackNavigator({
   Schedule,
@@ -23,32 +23,28 @@ const Navigator = createBottomTabNavigator(
       screen: ScheduleScreen,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
-          <Icon name="ios-calendar" color={tintColor} />
+          <Icon.Schedule color={tintColor} />
         ),
       },
     },
     Map: {
       screen: MapScreen,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="ios-map" color={tintColor} />
-        ),
+        tabBarIcon: ({tintColor}) => <Icon.Map color={tintColor} />,
       },
     },
     Faves: {
       screen: FavesScreen,
       navigationOptions: {
         tabBarIcon: ({tintColor}) => (
-          <Icon name="ios-heart" color={tintColor} />
+          <Icon.Favorite filled={true} color={tintColor} />
         ),
       },
     },
     About: {
       screen: AboutScreen,
       navigationOptions: {
-        tabBarIcon: ({tintColor}) => (
-          <Icon name="ios-information-circle" color={tintColor} />
-        ),
+        tabBarIcon: ({tintColor}) => <Icon.About color={tintColor} />,
       },
     },
   },

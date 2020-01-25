@@ -3,7 +3,7 @@ import {TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import {FavoritesContext} from '../context'
 
-const FavoriteButton = ({id, color = '#c04534', ...props}) => {
+const FavoriteButton = ({id}) => {
   const {favorites, addFavorite, removeFavorite} = useContext(
     FavoritesContext,
   )
@@ -16,15 +16,7 @@ const FavoriteButton = ({id, color = '#c04534', ...props}) => {
           : addFavorite(id)
       }
     >
-      <Icon
-        name={
-          favorites && favorites.includes(id)
-            ? 'ios-heart'
-            : 'ios-heart-empty'
-        }
-        color={color}
-        {...props}
-      />
+      <Icon.Favorite filled={favorites && favorites.includes(id)} />
     </TouchableOpacity>
   )
 }

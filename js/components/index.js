@@ -12,6 +12,7 @@ import FavoriteButton from './FavoriteButton'
 import SectionList from './SectionList'
 import HeroLogo from './HeroLogo'
 import Map from './Map'
+import Icon from './Icon'
 
 export {
   ApolloProvider,
@@ -28,4 +29,5 @@ export {
   SectionList,
   HeroLogo,
   Map,
+  Icon,
 }
