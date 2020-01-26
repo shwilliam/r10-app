@@ -7,6 +7,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: CONST.SPACING.VERTICAL * 2,
   },
+  headerTitle: {
+    fontSize: CONST.FONT.SIZE.PARAGRAPH,
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    color: CONST.FONT.COLOR.INVERTED,
+    paddingTop: CONST.SPACING.VERTICAL / 2,
+  },
   container: {
     paddingVertical: CONST.SPACING.VERTICAL,
     paddingHorizontal: CONST.SPACING.HORIZONTAL,

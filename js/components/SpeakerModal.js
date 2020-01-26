@@ -1,11 +1,10 @@
 import React from 'react'
-import {View, Linking} from 'react-native'
+import {View, Linking, Text as ReactText} from 'react-native'
 import {
   Modal,
   Layout,
   Text,
   Title,
-  Subtitle,
   Image,
   Section,
   Button,
@@ -24,7 +23,9 @@ const SpeakerModal = ({
     <Layout.Content style={styles.container}>
       <View style={styles.headerContainer}>
         <Modal.CloseButton onClose={onClose} />
-        <Subtitle>About the Speaker</Subtitle>
+        <ReactText style={styles.headerTitle}>
+          About the Speaker
+        </ReactText>
       </View>
 
       <Layout.Content style={styles.contentContainer}>
