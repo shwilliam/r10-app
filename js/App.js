@@ -1,5 +1,5 @@
 import React from 'react'
-import {ApolloProvider, FavoritesProvider} from './components'
+import {ApolloProvider, FavoritesProvider} from './context'
 import Navigator from './navigation'
 
 const App = () => (

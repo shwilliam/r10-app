@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import {FavoritesContext} from '../context'
-import {useAsyncStorage} from '../hooks'
+import {useAsyncStorage} from '../../hooks'
+import FavoritesContext from './context'
 
 const FavoritesProvider = ({children}) => {
   const [getLocalFavorites, setLocalFavorites] = useAsyncStorage(
@@ -46,5 +46,4 @@ const FavoritesProvider = ({children}) => {
   )
 }
 
-export {FavoritesContext}
 export default FavoritesProvider

@@ -1,5 +1,3 @@
-import ApolloProvider from './ApolloProvider'
-import FavoritesProvider from './FavoritesProvider'
 import Layout from './Layout'
 import Header from './Header'
 import Section from './Section'
@@ -18,8 +16,6 @@ import Icon from './Icon'
 import SpeakerModal from './SpeakerModal'
 
 export {
-  ApolloProvider,
-  FavoritesProvider,
   Layout,
   Header,
   Section,
