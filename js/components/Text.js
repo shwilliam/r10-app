@@ -2,8 +2,10 @@ import React from 'react'
 import {Text as ReactText} from 'react-native'
 import styles from './Text.styles'
 
-const Text = ({children}) => (
-  <ReactText style={styles.text}>{children}</ReactText>
+const Text = ({children, ...props}) => (
+  <ReactText style={styles.text} {...props}>
+    {children}
+  </ReactText>
 )
 
 export default Text
