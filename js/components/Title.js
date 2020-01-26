@@ -2,10 +2,8 @@ import React from 'react'
 import {Text} from 'react-native'
 import styles from './Title.styles'
 
-const Title = ({children, ...props}) => (
-  <Text style={styles.title} {...props}>
-    {children}
-  </Text>
+const Title = ({children}) => (
+  <Text style={styles.title}>{children}</Text>
 )
 
 export default Title

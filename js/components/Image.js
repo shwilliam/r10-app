@@ -2,7 +2,7 @@ import React from 'react'
 import {Image as ReactImage} from 'react-native'
 import styles from './Image.styles'
 
-const Image = ({src, size = 'm', ...props}) => (
+const Image = ({src, size = 'm'}) => (
   <ReactImage
     source={{uri: src}}
     style={
@@ -10,7 +10,6 @@ const Image = ({src, size = 'm', ...props}) => (
         ? {...styles.circularImage, ...styles.smallImage}
         : styles.circularImage
     }
-    {...props}
   />
 )
 

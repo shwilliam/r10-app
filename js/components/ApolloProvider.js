@@ -6,8 +6,8 @@ const client = new ApolloClient({
   uri: 'https://r10.academy.red/graphql',
 })
 
-const ApolloProvider = ({children, ...props}) => (
-  <ReactApolloProvider client={client} {...props}>
+const ApolloProvider = ({children}) => (
+  <ReactApolloProvider client={client}>
     {children}
   </ReactApolloProvider>
 )

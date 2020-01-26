@@ -17,7 +17,7 @@ const SectionList = ({
   ),
   loading = false,
   error = null,
-  ...props
+  renderItem,
 }) => (
   <>
     {loading ? <Text>loading</Text> : null}
@@ -27,27 +27,19 @@ const SectionList = ({
         sections={sections}
         keyExtractor={keyExtractor}
         renderSectionHeader={renderSectionHeader}
-        {...props}
+        renderItem={renderItem}
       />
     </SafeAreaView>
   </>
 )
 
-SectionList.Item = ({
-  id,
-  index,
-  onPress,
-  subtitle,
-  children,
-  ...props
-}) => (
+SectionList.Item = ({id, index, onPress, subtitle, children}) => (
   <TouchableOpacity
     onPress={onPress}
     style={{
       ...styles.itemContainer,
       ...(index === 0 ? styles.itemContainerFirst : {}),
     }}
-    {...props}
   >
     <View style={styles.itemContent}>
       <Text style={styles.itemTitle}>{children}</Text>

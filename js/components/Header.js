@@ -1,9 +1,9 @@
 import React from 'react'
-import {Header as ReactHeader} from 'react-navigation-stack'
 import {View} from 'react-native'
+import {Header as ReactHeader} from 'react-navigation-stack'
 import LinearGradient from 'react-native-linear-gradient'
-import CONST from '../constants'
 import styles from './Header.styles'
+import CONST from '../constants'
 
 const Header = props => (
   <View style={styles.container}>

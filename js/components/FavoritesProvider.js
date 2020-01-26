@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {FavoritesContext} from '../context'
 import {useAsyncStorage} from '../hooks'
 
-const FavoritesProvider = ({children, ...props}) => {
+const FavoritesProvider = ({children}) => {
   const [getLocalFavorites, setLocalFavorites] = useAsyncStorage(
     'favorites',
   )
@@ -40,7 +40,6 @@ const FavoritesProvider = ({children, ...props}) => {
         addFavorite,
         removeFavorite,
       }}
-      {...props}
     >
       {children}
     </FavoritesContext.Provider>
