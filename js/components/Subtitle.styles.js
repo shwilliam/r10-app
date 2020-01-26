@@ -9,11 +9,8 @@ const styles = StyleSheet.create({
     paddingVertical: CONST.SPACING.VERTICAL / 4,
   },
   subtitleSecondary: {
-    color: CONST.FONT.COLOR.PRIMARY,
-  },
-  subtitleTertiary: {
-    color: CONST.FONT.COLOR.ACCENT,
     fontSize: CONST.FONT.SIZE.PARAGRAPH,
+    color: CONST.FONT.COLOR.ACCENT,
   },
 })
 

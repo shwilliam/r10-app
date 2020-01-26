@@ -55,10 +55,11 @@ const Event = ({navigation, ...props}) => {
                 onPress={toggleModal}
                 style={styles.sessionSpeakerCard}
               >
-                <Image src={event.speaker.image} />
-                <Subtitle variant="secondary">
+                <Image src={event.speaker.image} size="s" />
+
+                <ReactText style={styles.sessionSpeakerCardTitle}>
                   {event.speaker.name}
-                </Subtitle>
+                </ReactText>
               </TouchableOpacity>
 
               <Button
@@ -84,7 +85,6 @@ const Event = ({navigation, ...props}) => {
           >
             <Text>{event.speaker.bio}</Text>
           </SpeakerModal>
-          <Image />
         </Layout.Content>
       ) : null}
     </Layout>

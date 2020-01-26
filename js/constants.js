@@ -1,4 +1,4 @@
-const CONSTS = {
+const CONST = {
   SPACING: {
     HORIZONTAL: 12.5,
     VERTICAL: 10,
@@ -31,4 +31,4 @@ const CONSTS = {
   },
 }
 
-export default CONSTS
+export default CONST

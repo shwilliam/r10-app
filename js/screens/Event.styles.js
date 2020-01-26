@@ -17,9 +17,15 @@ const styles = StyleSheet.create({
   sessionSpeakerCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: CONST.SPACING.VERTICAL,
+    paddingTop: CONST.SPACING.VERTICAL,
+    paddingBottom: CONST.SPACING.VERTICAL * 2.25,
     borderBottomWidth: 2,
     borderColor: CONST.COLOR.LIGHT_GREY,
+  },
+  sessionSpeakerCardTitle: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    fontSize: CONST.FONT.SIZE.PARAGRAPH,
+    paddingHorizontal: CONST.SPACING.HORIZONTAL,
   },
 })
 
