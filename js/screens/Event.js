@@ -17,8 +17,7 @@ import {
 import styles from './Event.styles'
 
 const Event = ({navigation, ...props}) => {
-  // TODO: remove default url params
-  const id = navigation.getParam('id', 'cjh2jemtn167f0122t01busx0')
+  const id = navigation.getParam('id')
   const {event, loading, error} = useEvent(id)
   const {favorites, addFavorite, removeFavorite} = useContext(
     FavoritesContext,
