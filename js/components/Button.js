@@ -1,11 +1,20 @@
 import React from 'react'
-import {TouchableOpacity, Text, View} from 'react-native'
+import {TouchableOpacity, View, Text} from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 import styles from './Button.styles'
+import CONST from '../constants'
 
 const Button = ({onPress, children}) => (
   <View style={styles.container}>
-    <TouchableOpacity onPress={onPress} style={styles.button}>
-      <Text style={styles.text}>{children}</Text>
+    <TouchableOpacity onPress={onPress}>
+      <LinearGradient
+        colors={[CONST.COLOR.PURPLE, CONST.COLOR.BLUE]}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        style={styles.button}
+      >
+        <Text style={styles.text}>{children}</Text>
+      </LinearGradient>
     </TouchableOpacity>
   </View>
 )

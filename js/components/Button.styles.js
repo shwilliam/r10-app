@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   },
   button: {
     borderRadius: 25,
-    backgroundColor: CONST.COLOR.PURPLE,
     paddingHorizontal: CONST.SPACING.HORIZONTAL * 2,
     paddingVertical: CONST.SPACING.VERTICAL * 1.5,
   },
