@@ -16,10 +16,13 @@ const CONSTS = {
       LIGHT: 'Montserrat-Light',
     },
     SIZE: {
+      PARAGRAPH: 20,
       TITLE: 30,
+      INFO: 15,
       SUBTITLE: 17.5,
     },
     COLOR: {
+      PRIMARY: '#000',
       SECONDARY: '#999',
       ACCENT: '#9963ea',
       RED: '#cf392a',

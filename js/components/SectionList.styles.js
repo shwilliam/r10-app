@@ -3,6 +3,7 @@ import CONST from '../constants'
 
 const styles = StyleSheet.create({
   sectionHeader: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
     fontWeight: 'bold',
     paddingVertical: CONST.SPACING.VERTICAL / 2,
     paddingHorizontal: CONST.SPACING.HORIZONTAL,
@@ -22,7 +23,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemTitle: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    fontSize: CONST.FONT.SIZE.SUBTITLE,
     fontWeight: 'bold',
+    paddingVertical: CONST.SPACING.VERTICAL / 4,
+  },
+  itemSubtitle: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    fontSize: CONST.FONT.SIZE.INFO,
+    color: CONST.FONT.COLOR.SECONDARY,
     paddingVertical: CONST.SPACING.VERTICAL / 4,
   },
   itemAction: {alignSelf: 'flex-end'},

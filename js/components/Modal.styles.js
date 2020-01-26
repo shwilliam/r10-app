@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
     left: CONST.SPACING.HORIZONTAL,
   },
   buttonCloseText: {
+    fontFamily: CONST.FONT.FAMILY.LIGHT,
+    fontSize: 27.5,
     color: '#fff',
   },
 })

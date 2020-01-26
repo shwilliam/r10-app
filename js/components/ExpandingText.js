@@ -14,11 +14,9 @@ const ExpandingText = ({label, children, ...props}) => {
         onPress={toggleIsOpen}
       >
         <View style={styles.iconContainer}>
-          <Subtitle variant="secondary">
-            {isOpen ? '-' : '+'}
-          </Subtitle>
+          <Subtitle variant="tertiary">{isOpen ? '-' : '+'}</Subtitle>
         </View>
-        <Subtitle variant="secondary">{label}</Subtitle>
+        <Subtitle variant="tertiary">{label}</Subtitle>
       </TouchableOpacity>
       {isOpen ? children : null}
     </View>

@@ -1,8 +1,8 @@
 import React from 'react'
-import {Text} from 'react-native'
 import {useCodeOfConduct} from '../hooks'
 import {
   Layout,
+  Text,
   Title,
   Section,
   ExpandingText,

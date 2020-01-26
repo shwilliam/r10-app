@@ -1,37 +1,39 @@
 import ApolloProvider from './ApolloProvider'
 import FavoritesProvider from './FavoritesProvider'
 import Layout from './Layout'
+import Header from './Header'
+import Section from './Section'
+import Text from './Text'
 import Title from './Title'
 import Subtitle from './Subtitle'
-import Section from './Section'
 import Image from './Image'
 import Modal from './Modal'
-import SpeakerModal from './SpeakerModal'
-import ExpandingText from './ExpandingText'
+import Button from './Button'
 import FavoriteButton from './FavoriteButton'
+import ExpandingText from './ExpandingText'
 import SectionList from './SectionList'
 import HeroLogo from './HeroLogo'
 import Map from './Map'
 import Icon from './Icon'
-import Button from './Button'
-import Header from './Header'
+import SpeakerModal from './SpeakerModal'
 
 export {
   ApolloProvider,
   FavoritesProvider,
   Layout,
+  Header,
+  Section,
+  Text,
   Title,
   Subtitle,
-  Section,
   Image,
   Modal,
-  SpeakerModal,
-  ExpandingText,
+  Button,
   FavoriteButton,
+  ExpandingText,
   SectionList,
   HeroLogo,
   Map,
   Icon,
-  Button,
-  Header,
+  SpeakerModal,
 }

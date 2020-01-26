@@ -9,7 +9,10 @@ const styles = StyleSheet.create({
     marginVertical: CONST.SPACING.VERTICAL,
   },
   sessionTime: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    fontSize: CONST.FONT.SIZE.SUBTITLE,
     color: CONST.FONT.COLOR.RED,
+    marginVertical: CONST.SPACING.VERTICAL / 2,
   },
   sessionSpeakerCard: {
     flexDirection: 'row',

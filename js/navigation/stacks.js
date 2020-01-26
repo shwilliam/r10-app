@@ -13,7 +13,10 @@ const navigationOptions = ({navigation}) => ({
     backgroundColor: 'transparent',
   },
   headerTintColor: '#fff',
-  // headerTitleStyle: {fontFamily: 'Montserrat'},
+  headerTitleStyle: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    fontSize: CONST.FONT.SIZE.PARAGRAPH,
+  },
   headerLeft: isAndroid ? (
     <Drawer navigation={navigation} />
   ) : (

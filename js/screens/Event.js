@@ -1,10 +1,11 @@
 import React, {useContext} from 'react'
-import {View, Text, TouchableOpacity} from 'react-native'
+import {View, TouchableOpacity, Text as ReactText} from 'react-native'
 import {formatTimestamp} from '../utils'
 import {useEvent, useToggle} from '../hooks'
 import {FavoritesContext} from '../context'
 import {
   Layout,
+  Text,
   Title,
   Subtitle,
   Image,
@@ -40,9 +41,9 @@ const Event = ({navigation, ...props}) => {
 
             <Title>{event.title}</Title>
 
-            <Text style={styles.sessionTime}>
+            <ReactText style={styles.sessionTime}>
               {formatTimestamp(event.startTime)}
-            </Text>
+            </ReactText>
 
             <Section>
               <Text>{event.description}</Text>
@@ -55,7 +56,9 @@ const Event = ({navigation, ...props}) => {
                 style={styles.sessionSpeakerCard}
               >
                 <Image src={event.speaker.image} />
-                <Text>{event.speaker.name}</Text>
+                <Subtitle variant="secondary">
+                  {event.speaker.name}
+                </Subtitle>
               </TouchableOpacity>
 
               <Button

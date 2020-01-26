@@ -1,8 +1,9 @@
 import React from 'react'
-import {View, Text, Linking} from 'react-native'
+import {View, Linking} from 'react-native'
 import {
   Modal,
   Layout,
+  Text,
   Title,
   Subtitle,
   Image,

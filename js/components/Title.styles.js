@@ -3,9 +3,10 @@ import CONST from '../constants'
 
 const styles = StyleSheet.create({
   title: {
+    fontFamily: CONST.FONT.FAMILY.REGULAR,
     fontSize: CONST.FONT.SIZE.TITLE,
-    fontWeight: 'bold',
-    marginVertical: CONST.SPACING.VERTICAL,
+    marginTop: CONST.SPACING.VERTICAL / 2,
+    marginBottom: CONST.SPACING.VERTICAL,
   },
 })
 

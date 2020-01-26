@@ -7,6 +7,8 @@ const Subtitle = ({children, variant = 'primary', ...props}) => (
     style={
       variant === 'secondary'
         ? {...styles.subtitle, ...styles.subtitleSecondary}
+        : variant === 'tertiary'
+        ? {...styles.subtitle, ...styles.subtitleTertiary}
         : styles.subtitle
     }
     {...props}

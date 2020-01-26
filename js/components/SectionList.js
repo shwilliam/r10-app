@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   View,
 } from 'react-native'
-import {FavoriteButton, Subtitle} from './index'
+import {FavoriteButton} from './index'
 import styles from './SectionList.styles'
 
 const SectionList = ({
@@ -51,7 +51,7 @@ SectionList.Item = ({
   >
     <View style={styles.itemContent}>
       <Text style={styles.itemTitle}>{children}</Text>
-      <Subtitle>{subtitle}</Subtitle>
+      <Text style={styles.itemSubtitle}>{subtitle}</Text>
     </View>
 
     <View style={styles.itemAction}>
