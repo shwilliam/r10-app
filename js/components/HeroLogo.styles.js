@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     paddingVertical: 25,
     borderBottomWidth: 1,
-    borderColor: CONST.COLOR.LIGHT_GREY,
+    borderColor: THEME.COLOR.LIGHT_GREY,
   },
 })
 

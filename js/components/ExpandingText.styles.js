@@ -1,12 +1,12 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginVertical: CONST.SPACING.VERTICAL,
+    marginVertical: THEME.SPACING.VERTICAL,
   },
-  iconContainer: {marginRight: CONST.SPACING.HORIZONTAL / 2},
+  iconContainer: {marginRight: THEME.SPACING.HORIZONTAL / 2},
   contentContainer: {
     overflow: 'hidden',
   },

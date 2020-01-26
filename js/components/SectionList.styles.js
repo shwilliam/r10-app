@@ -1,20 +1,20 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   sectionHeader: {
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
     fontWeight: 'bold',
-    paddingVertical: CONST.SPACING.VERTICAL / 2,
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
-    backgroundColor: CONST.COLOR.LIGHT_GREY,
+    paddingVertical: THEME.SPACING.VERTICAL / 2,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL,
+    backgroundColor: THEME.COLOR.LIGHT_GREY,
   },
   itemContainer: {
     flexDirection: 'row',
-    paddingVertical: CONST.SPACING.VERTICAL,
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
+    paddingVertical: THEME.SPACING.VERTICAL,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL,
     borderTopWidth: 2,
-    borderColor: CONST.COLOR.LIGHT_GREY,
+    borderColor: THEME.COLOR.LIGHT_GREY,
   },
   itemContainerFirst: {
     borderTopWidth: 0,
@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemTitle: {
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    fontSize: CONST.FONT.SIZE.SUBTITLE,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    fontSize: THEME.FONT.SIZE.SUBTITLE,
     fontWeight: 'bold',
-    paddingVertical: CONST.SPACING.VERTICAL / 4,
+    paddingVertical: THEME.SPACING.VERTICAL / 4,
   },
   itemSubtitle: {
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    fontSize: CONST.FONT.SIZE.INFO,
-    color: CONST.FONT.COLOR.SECONDARY,
-    paddingVertical: CONST.SPACING.VERTICAL / 4,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    fontSize: THEME.FONT.SIZE.INFO,
+    color: THEME.FONT.COLOR.SECONDARY,
+    paddingVertical: THEME.SPACING.VERTICAL / 4,
   },
   itemAction: {alignSelf: 'flex-end'},
 })

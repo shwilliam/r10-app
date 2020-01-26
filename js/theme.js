@@ -1,4 +1,4 @@
-const CONST = {
+const THEME = {
   SPACING: {
     HORIZONTAL: 12.5,
     VERTICAL: 10,
@@ -31,4 +31,4 @@ const CONST = {
   },
 }
 
-export default CONST
+export default THEME

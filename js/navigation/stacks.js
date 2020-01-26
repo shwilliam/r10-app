@@ -4,7 +4,7 @@ import {Header} from '../components'
 import {Schedule, About, Event, Faves, Map} from '../screens'
 import Drawer from './Drawer'
 import {isAndroid} from '../utils'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const navigationOptions = ({navigation}) => ({
   headerBackTitleVisible: false,
@@ -14,8 +14,8 @@ const navigationOptions = ({navigation}) => ({
   },
   headerTintColor: '#fff',
   headerTitleStyle: {
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    fontSize: CONST.FONT.SIZE.PARAGRAPH,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    fontSize: THEME.FONT.SIZE.PARAGRAPH,
   },
   headerLeft: isAndroid ? (
     <Drawer navigation={navigation} />

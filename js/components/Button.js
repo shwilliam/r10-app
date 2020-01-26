@@ -2,13 +2,13 @@ import React from 'react'
 import {TouchableOpacity, View, Text} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import styles from './Button.styles'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const Button = ({onPress, children}) => (
   <View style={styles.container}>
     <TouchableOpacity onPress={onPress}>
       <LinearGradient
-        colors={[CONST.COLOR.PURPLE, CONST.COLOR.BLUE]}
+        colors={[THEME.COLOR.PURPLE, THEME.COLOR.BLUE]}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
         style={styles.button}

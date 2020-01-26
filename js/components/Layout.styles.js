@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   contentContainer: {
-    paddingHorizontal: CONST.SPACING.HORIZONTAL * 1.5,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL * 1.5,
   },
 })
 

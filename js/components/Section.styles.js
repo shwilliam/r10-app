@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   section: {
-    marginVertical: CONST.SPACING.VERTICAL,
+    marginVertical: THEME.SPACING.VERTICAL,
   },
   sectionCentered: {
     flexDirection: 'row',

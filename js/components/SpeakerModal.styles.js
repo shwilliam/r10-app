@@ -1,30 +1,30 @@
 import {StyleSheet, Dimensions} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: CONST.SPACING.VERTICAL * 2,
+    marginBottom: THEME.SPACING.VERTICAL * 2,
   },
   headerTitle: {
-    fontSize: CONST.FONT.SIZE.PARAGRAPH,
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    color: CONST.FONT.COLOR.INVERTED,
-    paddingTop: CONST.SPACING.VERTICAL / 2,
+    fontSize: THEME.FONT.SIZE.PARAGRAPH,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    color: THEME.FONT.COLOR.INVERTED,
+    paddingTop: THEME.SPACING.VERTICAL / 2,
   },
   container: {
-    paddingVertical: CONST.SPACING.VERTICAL,
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
     backgroundColor: '#000',
+    paddingVertical: THEME.SPACING.VERTICAL,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL,
     height: Dimensions.get('window').height,
   },
   contentContainer: {
     backgroundColor: '#fff',
     borderRadius: 5,
-    marginTop: CONST.SPACING.VERTICAL,
-    paddingVertical: CONST.SPACING.VERTICAL,
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
+    marginTop: THEME.SPACING.VERTICAL,
+    paddingVertical: THEME.SPACING.VERTICAL,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL / 2,
   },
 })
 

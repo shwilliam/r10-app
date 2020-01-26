@@ -1,20 +1,20 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   modal: {
     zIndex: 999,
     height: '100%',
-    paddingVertical: CONST.SPACING.VERTICAL,
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
+    paddingVertical: THEME.SPACING.VERTICAL,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL,
   },
   buttonClose: {
     position: 'absolute',
-    top: CONST.SPACING.VERTICAL * 0.5,
-    left: CONST.SPACING.HORIZONTAL,
+    top: THEME.SPACING.VERTICAL * 0.5,
+    left: THEME.SPACING.HORIZONTAL,
   },
   buttonCloseText: {
-    fontFamily: CONST.FONT.FAMILY.LIGHT,
+    fontFamily: THEME.FONT.FAMILY.LIGHT,
     fontSize: 27.5,
     color: '#fff',
   },

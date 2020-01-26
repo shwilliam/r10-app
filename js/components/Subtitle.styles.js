@@ -1,16 +1,16 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   subtitle: {
-    fontSize: CONST.FONT.SIZE.SUBTITLE,
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    color: CONST.FONT.COLOR.SECONDARY,
-    paddingVertical: CONST.SPACING.VERTICAL / 4,
+    fontSize: THEME.FONT.SIZE.SUBTITLE,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    color: THEME.FONT.COLOR.SECONDARY,
+    paddingVertical: THEME.SPACING.VERTICAL / 4,
   },
   subtitleSecondary: {
-    fontSize: CONST.FONT.SIZE.PARAGRAPH,
-    color: CONST.FONT.COLOR.ACCENT,
+    fontSize: THEME.FONT.SIZE.PARAGRAPH,
+    color: THEME.FONT.COLOR.ACCENT,
   },
 })
 

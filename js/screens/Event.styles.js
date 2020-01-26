@@ -1,31 +1,31 @@
 import {StyleSheet} from 'react-native'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const styles = StyleSheet.create({
   sessionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginVertical: CONST.SPACING.VERTICAL,
+    marginVertical: THEME.SPACING.VERTICAL,
   },
   sessionTime: {
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    fontSize: CONST.FONT.SIZE.SUBTITLE,
-    color: CONST.FONT.COLOR.RED,
-    marginVertical: CONST.SPACING.VERTICAL / 2,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    fontSize: THEME.FONT.SIZE.SUBTITLE,
+    color: THEME.FONT.COLOR.RED,
+    marginVertical: THEME.SPACING.VERTICAL / 2,
   },
   sessionSpeakerCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: CONST.SPACING.VERTICAL,
-    paddingBottom: CONST.SPACING.VERTICAL * 2.25,
+    paddingTop: THEME.SPACING.VERTICAL,
+    paddingBottom: THEME.SPACING.VERTICAL * 2.25,
     borderBottomWidth: 2,
-    borderColor: CONST.COLOR.LIGHT_GREY,
+    borderColor: THEME.COLOR.LIGHT_GREY,
   },
   sessionSpeakerCardTitle: {
-    fontFamily: CONST.FONT.FAMILY.REGULAR,
-    fontSize: CONST.FONT.SIZE.PARAGRAPH,
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
+    fontFamily: THEME.FONT.FAMILY.REGULAR,
+    fontSize: THEME.FONT.SIZE.PARAGRAPH,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL,
   },
 })
 

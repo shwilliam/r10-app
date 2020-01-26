@@ -7,7 +7,7 @@ import {
   FavesStack,
   MapStack,
 } from './stacks'
-import CONST from '../constants'
+import THEME from '../theme'
 
 const Navigator = createBottomTabNavigator(
   {
@@ -48,11 +48,11 @@ const Navigator = createBottomTabNavigator(
       style: {
         height: 60,
         backgroundColor: '#000',
-        paddingTop: CONST.SPACING.HORIZONTAL / 2,
+        paddingTop: THEME.SPACING.HORIZONTAL / 2,
       },
       labelStyle: {
         fontSize: 15,
-        paddingTop: CONST.SPACING.HORIZONTAL / 4,
+        paddingTop: THEME.SPACING.HORIZONTAL / 4,
       },
     },
   },
