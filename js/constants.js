@@ -11,6 +11,10 @@ const CONSTS = {
     RED: '#cf392a',
   },
   FONT: {
+    FAMILY: {
+      REGULAR: 'Montserrat-Regular',
+      LIGHT: 'Montserrat-Light',
+    },
     SIZE: {
       TITLE: 30,
       SUBTITLE: 17.5,
