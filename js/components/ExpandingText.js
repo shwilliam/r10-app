@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import {View, TouchableOpacity, Animated} from 'react-native'
+import SkeletonLoader from 'react-native-skeleton-loader'
 import {useToggle} from '../hooks'
 import {Subtitle, Section, Text} from './index'
 import styles from './ExpandingText.styles'
+import THEME from '../theme'
 
 const ExpandingText = ({label, children}) => {
   const [isOpen, toggleIsOpen] = useToggle(false)
@@ -55,5 +57,16 @@ const ExpandingText = ({label, children}) => {
     </View>
   )
 }
+
+ExpandingText.Skeleton = () => (
+  <Section>
+    <SkeletonLoader
+      type="rectangle"
+      height={25}
+      loading={true}
+      highlightColor={THEME.COLOR.PURPLE}
+    />
+  </Section>
+)
 
 export default ExpandingText

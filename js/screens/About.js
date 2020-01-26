@@ -35,8 +35,20 @@ const About = props => {
 
         <Section>
           <Title>Code of Conduct</Title>
-          {loading ? <Text>loading</Text> : null}
+
+          {loading && (
+            <>
+              <ExpandingText.Skeleton />
+              <ExpandingText.Skeleton />
+              <ExpandingText.Skeleton />
+              <ExpandingText.Skeleton />
+              <ExpandingText.Skeleton />
+              <ExpandingText.Skeleton />
+            </>
+          )}
+
           {error ? <Text>error</Text> : null}
+
           {codeOfConduct
             ? codeOfConduct
                 .sort(sortByOrderKey)
