@@ -3,7 +3,7 @@ import CONST from '../constants'
 
 const styles = StyleSheet.create({
   contentContainer: {
-    paddingHorizontal: CONST.SPACING.HORIZONTAL,
+    paddingHorizontal: CONST.SPACING.HORIZONTAL * 1.5,
   },
 })
 
