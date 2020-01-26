@@ -50,7 +50,11 @@ Icon.Menu = ({color}) => (
   <Icon
     name={isAndroid ? 'md-menu' : 'ios-menu'}
     color={color}
-    style={styles.icon}
+    style={{
+      ...styles.icon,
+      ...styles.iconHPadded,
+      ...styles.iconWhite,
+    }}
   />
 )
 
