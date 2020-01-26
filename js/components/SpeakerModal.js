@@ -1,5 +1,10 @@
 import React from 'react'
-import {View, Linking, Text as ReactText} from 'react-native'
+import {
+  View,
+  Linking,
+  ScrollView,
+  Text as ReactText,
+} from 'react-native'
 import {
   Modal,
   Layout,
@@ -29,7 +34,7 @@ const SpeakerModal = ({
           </ReactText>
         </View>
 
-        <View style={styles.contentContainer}>
+        <ScrollView style={styles.contentContainer}>
           <Layout.Content>
             <Section centered>
               <Image src={imageUrl} centered />
@@ -47,7 +52,7 @@ const SpeakerModal = ({
               </Button>
             </Section>
           </Layout.Content>
-        </View>
+        </ScrollView>
       </Layout.Content>
     </View>
   </Modal>
