@@ -31,12 +31,7 @@ const ScheduleStack = createStackNavigator({
   },
   Event: {
     screen: Event,
-    navigationOptions: isAndroid
-      ? {
-          ...navigationOptions,
-          headerLeft: undefined,
-        }
-      : navigationOptions,
+    navigationOptions,
   },
 })
 

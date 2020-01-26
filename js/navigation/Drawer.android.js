@@ -4,8 +4,18 @@ import {Icon} from '../components'
 
 const Drawer = ({navigation}) => (
   <View style={{flexDirection: 'row'}}>
-    <TouchableOpacity onPress={navigation.toggleDrawer}>
-      <Icon.Menu />
+    <TouchableOpacity
+      onPress={
+        navigation.isFirstRouteInParent()
+          ? navigation.toggleDrawer
+          : () => navigation.goBack() // HACK: pass as new fn to trigger
+      }
+    >
+      {navigation.isFirstRouteInParent() ? (
+        <Icon.Menu />
+      ) : (
+        <Icon.Back />
+      )}
     </TouchableOpacity>
   </View>
 )

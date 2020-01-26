@@ -58,4 +58,16 @@ Icon.Menu = ({color}) => (
   />
 )
 
+Icon.Back = ({color}) => (
+  <Icon
+    name={isAndroid ? 'md-arrow-back' : 'ios-arrow-back'}
+    color={color}
+    style={{
+      ...styles.icon,
+      ...styles.iconHPadded,
+      ...styles.iconWhite,
+    }}
+  />
+)
+
 export default Icon
