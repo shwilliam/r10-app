@@ -4,6 +4,7 @@ import {Header} from '../components'
 import {Schedule, About, Event, Faves, Map} from '../screens'
 import Drawer from './Drawer'
 import {isAndroid} from '../utils'
+import CONST from '../constants'
 
 const navigationOptions = ({navigation}) => ({
   headerBackTitleVisible: false,
@@ -13,7 +14,11 @@ const navigationOptions = ({navigation}) => ({
   },
   headerTintColor: '#fff',
   // headerTitleStyle: {fontFamily: 'Montserrat'},
-  headerLeft: isAndroid ? <Drawer navigation={navigation} /> : null,
+  headerLeft: isAndroid ? (
+    <Drawer navigation={navigation} />
+  ) : (
+    undefined
+  ),
 })
 
 const ScheduleStack = createStackNavigator({
@@ -23,7 +28,7 @@ const ScheduleStack = createStackNavigator({
   },
   Event: {
     screen: Event,
-    navigationOptions,
+    navigationOptions: {...navigationOptions, headerLeft: undefined},
   },
 })
 
