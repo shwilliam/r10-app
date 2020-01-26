@@ -1,9 +1,6 @@
 import React from 'react'
-import {
-  ApolloProvider,
-  FavoritesProvider,
-  Navigator,
-} from './components'
+import {ApolloProvider, FavoritesProvider} from './components'
+import Navigator from './navigation'
 
 const App = () => (
   <ApolloProvider>

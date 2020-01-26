@@ -1,6 +1,5 @@
 import ApolloProvider from './ApolloProvider'
 import FavoritesProvider from './FavoritesProvider'
-import Navigator from './Navigator'
 import Layout from './Layout'
 import Title from './Title'
 import Subtitle from './Subtitle'
@@ -20,7 +19,6 @@ import Header from './Header'
 export {
   ApolloProvider,
   FavoritesProvider,
-  Navigator,
   Layout,
   Title,
   Subtitle,

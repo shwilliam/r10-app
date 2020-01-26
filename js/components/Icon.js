@@ -27,6 +27,7 @@ Icon.Schedule = ({color}) => (
     style={styles.icon}
   />
 )
+
 Icon.Map = ({color}) => (
   <Icon
     name={isAndroid ? 'md-map' : 'ios-map'}
@@ -40,6 +41,14 @@ Icon.About = ({color}) => (
     name={
       isAndroid ? 'md-information-circle' : 'ios-information-circle'
     }
+    color={color}
+    style={styles.icon}
+  />
+)
+
+Icon.Menu = ({color}) => (
+  <Icon
+    name={isAndroid ? 'md-menu' : 'ios-menu'}
     color={color}
     style={styles.icon}
   />
