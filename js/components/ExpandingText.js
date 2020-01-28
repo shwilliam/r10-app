@@ -11,7 +11,6 @@ import {useToggle} from '../hooks'
 import {Subtitle, Section, Text} from './index'
 import styles from './ExpandingText.styles'
 import THEME from '../theme'
-import {Easing} from 'react-native-reanimated'
 
 // uncomment to enable UI animations in android
 // NativeModules.UIManager.setLayoutAnimationEnabledExperimental &&
@@ -19,16 +18,10 @@ import {Easing} from 'react-native-reanimated'
 
 const ExpandingTextContent = ({children}) => {
   LayoutAnimation.configureNext({
-    duration: 300,
+    duration: 700,
     create: {
-      type: 'spring',
-      property: 'scaleY',
-      springDamping: 0.9,
-    },
-    delete: {
       type: 'easeOut',
-      property: 'scaleY',
-      duration: 100,
+      property: 'opacity',
     },
   })
 
@@ -42,7 +35,6 @@ const ExpandingTextToggle = ({open, onPress, children}) => {
     Animated.timing(rotation, {
       toValue: open ? 0 : 1,
       duration: 300,
-      easing: Easing.easeOut,
     }).start()
   }
 
@@ -54,21 +46,23 @@ const ExpandingTextToggle = ({open, onPress, children}) => {
         onPress()
       }}
     >
-      <Animated.View
-        style={{
-          ...styles.iconContainer,
-          transform: [
-            {
-              rotate: rotation.interpolate({
-                inputRange: [0, 1],
-                outputRange: ['-90deg', '0deg'],
-              }),
-            },
-          ],
-        }}
-      >
-        <Subtitle variant="secondary">{open ? '-' : '+'}</Subtitle>
-      </Animated.View>
+      <View>
+        <Animated.View
+          style={{
+            ...styles.iconContainer,
+            transform: [
+              {
+                rotate: rotation.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: ['-90deg', '0deg'],
+                }),
+              },
+            ],
+          }}
+        >
+          <Subtitle variant="secondary">{open ? '-' : '+'}</Subtitle>
+        </Animated.View>
+      </View>
       <Subtitle variant="secondary">{children}</Subtitle>
     </TouchableOpacity>
   )
