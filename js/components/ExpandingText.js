@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   Animated,
   LayoutAnimation,
+  // NativeModules,
 } from 'react-native'
 import SkeletonLoader from 'react-native-skeleton-loader'
 import {useToggle} from '../hooks'
@@ -11,6 +12,10 @@ import {Subtitle, Section, Text} from './index'
 import styles from './ExpandingText.styles'
 import THEME from '../theme'
 import {Easing} from 'react-native-reanimated'
+
+// uncomment to enable UI animations in android
+// NativeModules.UIManager.setLayoutAnimationEnabledExperimental &&
+//   NativeModules.UIManager.setLayoutAnimationEnabledExperimental(true)
 
 const ExpandingTextContent = ({children}) => {
   LayoutAnimation.configureNext({
