@@ -14,6 +14,7 @@ import HeroLogo from './HeroLogo'
 import Map from './Map'
 import Icon from './Icon'
 import SpeakerModal from './SpeakerModal'
+import CopyrightText from './CopyrightText'
 
 export {
   Layout,
@@ -32,4 +33,5 @@ export {
   Map,
   Icon,
   SpeakerModal,
+  CopyrightText,
 }

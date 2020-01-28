@@ -7,6 +7,7 @@ import {
   Section,
   ExpandingText,
   HeroLogo,
+  CopyrightText,
 } from '../components'
 
 const sortByOrderKey = ({order: a}, {order: b}) => a - b
@@ -59,6 +60,8 @@ const About = props => {
                 ))
             : null}
         </Section>
+
+        <CopyrightText />
       </Layout.Content>
     </Layout>
   )
