@@ -1,33 +1,43 @@
-import React, {useState} from 'react'
-import {View, TouchableOpacity, Animated} from 'react-native'
+import React from 'react'
+import {
+  View,
+  TouchableOpacity,
+  Animated,
+  LayoutAnimation,
+} from 'react-native'
 import SkeletonLoader from 'react-native-skeleton-loader'
 import {useToggle} from '../hooks'
 import {Subtitle, Section, Text} from './index'
 import styles from './ExpandingText.styles'
 import THEME from '../theme'
 
+const ExpandingTextContent = ({children}) => {
+  LayoutAnimation.configureNext({
+    duration: 300,
+    create: {
+      type: 'spring',
+      property: 'scaleY',
+      springDamping: 0.9,
+    },
+    delete: {
+      type: 'easeOut',
+      property: 'scaleY',
+      duration: 100,
+    },
+  })
+
+  return <Animated.View>{children}</Animated.View>
+}
+
 const ExpandingText = ({label, children}) => {
   const [isOpen, toggleIsOpen] = useToggle(false)
 
-  const [maxHeight, setMaxHeight] = useState()
-  const [openAnim] = useState(new Animated.Value(0))
-
-  const measureMaxHeight = e =>
-    typeof maxHeight !== 'number' && // not set
-    setMaxHeight(e.nativeEvent.layout.height)
-
-  const toggle = () => {
-    if (typeof maxHeight !== 'number') return
-
-    Animated.spring(openAnim, {
-      toValue: isOpen ? 0 : maxHeight,
-    }).start()
-    toggleIsOpen()
-  }
-
   return (
     <View>
-      <TouchableOpacity style={styles.container} onPress={toggle}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={toggleIsOpen}
+      >
         <View style={styles.iconContainer}>
           <Subtitle variant="secondary">
             {isOpen ? '-' : '+'}
@@ -36,24 +46,13 @@ const ExpandingText = ({label, children}) => {
         <Subtitle variant="secondary">{label}</Subtitle>
       </TouchableOpacity>
 
-      <Animated.View
-        style={{
-          height: openAnim,
-        }}
-      >
-        <View
-          onLayout={measureMaxHeight}
-          style={
-            maxHeight
-              ? styles.contentContainer
-              : styles.contentContainerGhost
-          }
-        >
+      <ExpandingTextContent>
+        {isOpen && (
           <Section>
             <Text>{children}</Text>
           </Section>
-        </View>
-      </Animated.View>
+        )}
+      </ExpandingTextContent>
     </View>
   )
 }
