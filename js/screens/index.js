@@ -1,7 +1,7 @@
 import About from './About'
-import Event from './Event'
+import Session from './Session'
 import Schedule from './Schedule'
 import Faves from './Faves'
 import Map from './Map'
 
-export {About, Event, Schedule, Faves, Map}
+export {About, Session, Schedule, Faves, Map}

@@ -1,7 +1,7 @@
 import React from 'react'
 import {createStackNavigator} from 'react-navigation-stack'
 import {Header} from '../components'
-import {Schedule, About, Event, Faves, Map} from '../screens'
+import {Schedule, About, Session, Faves, Map} from '../screens'
 import Drawer from './Drawer'
 import {isAndroid} from '../utils'
 import THEME from '../theme'
@@ -29,8 +29,8 @@ const ScheduleStack = createStackNavigator({
     screen: Schedule,
     navigationOptions,
   },
-  Event: {
-    screen: Event,
+  Session: {
+    screen: Session,
     navigationOptions,
   },
 })

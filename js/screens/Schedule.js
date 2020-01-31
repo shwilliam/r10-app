@@ -16,7 +16,7 @@ const Schedule = ({navigation, ...props}) => {
           <SectionList.Item
             id={id}
             index={i}
-            onPress={() => navigation.push('Event', {id})}
+            onPress={() => navigation.push('Session', {id})}
             subtitle={location}
           >
             {title}

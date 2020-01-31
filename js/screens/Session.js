@@ -14,9 +14,9 @@ import {
   Section,
   SpeakerModal,
 } from '../components'
-import styles from './Event.styles'
+import styles from './Session.styles'
 
-const Event = ({navigation, ...props}) => {
+const Session = ({navigation, ...props}) => {
   const id = navigation.getParam('id')
   const {event, loading, error} = useEvent(id)
   const {favorites, addFavorite, removeFavorite} = useContext(
@@ -90,4 +90,4 @@ const Event = ({navigation, ...props}) => {
   )
 }
 
-export default Event
+export default Session
