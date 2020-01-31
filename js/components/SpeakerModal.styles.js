@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 5,
     marginTop: THEME.SPACING.VERTICAL,
+    marginBottom: THEME.SPACING.VERTICAL * 10,
     paddingVertical: THEME.SPACING.VERTICAL,
     paddingHorizontal: THEME.SPACING.HORIZONTAL / 2,
   },
