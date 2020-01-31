@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingVertical: THEME.SPACING.VERTICAL,
     paddingHorizontal: THEME.SPACING.HORIZONTAL,
+    backgroundColor: '#000',
   },
   buttonClose: {
     position: 'absolute',

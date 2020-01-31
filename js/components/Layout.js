@@ -4,7 +4,7 @@ import styles from './Layout.styles'
 
 const Layout = ({children}) => (
   <>
-    <StatusBar barStyle="dark-content" />
+    <StatusBar barStyle="light-content" />
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         {children}
