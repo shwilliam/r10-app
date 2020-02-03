@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import {FavoriteButton} from './index'
 import styles from './SectionList.styles'
+import Spinner from './Spinner'
 
 const SectionList = ({
   sections,
@@ -18,10 +19,17 @@ const SectionList = ({
   loading = false,
   error = null,
   renderItem,
-}) => (
-  <>
-    {loading ? <Text>loading</Text> : null}
-    {error ? <Text>error</Text> : null}
+}) => {
+  if (error)
+    return (
+      <Text>
+        Unable to fetch event sessions. Please restart the app to try
+        again.
+      </Text>
+    )
+  if (loading) return <Spinner />
+
+  return (
     <SafeAreaView>
       <ReactSectionList
         sections={sections}
@@ -30,8 +38,8 @@ const SectionList = ({
         renderItem={renderItem}
       />
     </SafeAreaView>
-  </>
-)
+  )
+}
 
 SectionList.Item = ({id, index, onPress, subtitle, children}) => (
   <TouchableOpacity

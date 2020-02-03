@@ -2,12 +2,13 @@ import React, {useContext} from 'react'
 import {useSessions} from '../hooks'
 import {FavoritesContext} from '../context'
 import {groupEventsByTime} from '../utils'
-import {Layout, SectionList} from '../components'
+import {Layout, SectionList, Spinner} from '../components'
 
 const Faves = ({navigation, ...props}) => {
   const {favorites} = useContext(FavoritesContext)
   const {sessions, loading, error} = useSessions()
 
+  if (loading) return <Spinner />
   return (
     <Layout {...props}>
       <SectionList

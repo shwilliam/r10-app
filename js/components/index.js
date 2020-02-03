@@ -15,6 +15,7 @@ import Map from './Map'
 import Icon from './Icon'
 import SpeakerModal from './SpeakerModal'
 import CopyrightText from './CopyrightText'
+import Spinner from './Spinner'
 
 export {
   Layout,
@@ -34,4 +35,5 @@ export {
   Icon,
   SpeakerModal,
   CopyrightText,
+  Spinner,
 }

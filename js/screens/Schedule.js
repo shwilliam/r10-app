@@ -1,11 +1,12 @@
 import React from 'react'
 import {useSessions} from '../hooks'
 import {groupEventsByTime} from '../utils'
-import {Layout, SectionList} from '../components'
+import {Layout, SectionList, Spinner} from '../components'
 
 const Schedule = ({navigation, ...props}) => {
   const {sessions, loading, error} = useSessions()
 
+  if (loading) return <Spinner />
   return (
     <Layout {...props}>
       <SectionList

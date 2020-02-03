@@ -13,6 +13,7 @@ import {
   Button,
   Section,
   SpeakerModal,
+  Spinner,
 } from '../components'
 import styles from './Session.styles'
 
@@ -24,12 +25,15 @@ const Session = ({navigation, ...props}) => {
   )
   const [modalOpen, toggleModal] = useToggle()
 
+  if (error)
+    <Text>
+      Unable to fetch session details. Please restart the app and try
+      again.
+    </Text>
+
+  if (loading) return <Spinner />
   return (
     <Layout {...props}>
-      {loading ? <Text>loading</Text> : null}
-
-      {error ? <Text>error</Text> : null}
-
       {event ? (
         <Layout.Content>
           <View>
