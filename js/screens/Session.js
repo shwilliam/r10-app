@@ -52,42 +52,46 @@ const Session = ({navigation, ...props}) => {
               <Text>{event.description}</Text>
             </Section>
 
-            <Section>
-              <Subtitle>Presented by:</Subtitle>
-              <TouchableOpacity
-                onPress={toggleModal}
-                style={styles.sessionSpeakerCard}
-              >
-                <Image src={event.speaker.image} size="s" />
+            {event.speaker && (
+              <Section>
+                <Subtitle>Presented by:</Subtitle>
+                <TouchableOpacity
+                  onPress={toggleModal}
+                  style={styles.sessionSpeakerCard}
+                >
+                  <Image src={event.speaker.image} size="s" />
 
-                <ReactText style={styles.sessionSpeakerCardTitle}>
-                  {event.speaker.name}
-                </ReactText>
-              </TouchableOpacity>
+                  <ReactText style={styles.sessionSpeakerCardTitle}>
+                    {event.speaker.name}
+                  </ReactText>
+                </TouchableOpacity>
 
-              <Button
-                onPress={() =>
-                  favorites && favorites.includes(id)
-                    ? removeFavorite(id)
-                    : addFavorite(id)
-                }
-              >
-                {favorites && favorites.includes(id)
-                  ? 'Remove from'
-                  : 'Add to'}{' '}
-                favorites
-              </Button>
-            </Section>
+                <Button
+                  onPress={() =>
+                    favorites && favorites.includes(id)
+                      ? removeFavorite(id)
+                      : addFavorite(id)
+                  }
+                >
+                  {favorites && favorites.includes(id)
+                    ? 'Remove from'
+                    : 'Add to'}{' '}
+                  favorites
+                </Button>
+              </Section>
+            )}
           </View>
-          <SpeakerModal
-            open={modalOpen}
-            onClose={toggleModal}
-            imageUrl={event.speaker.image}
-            title={event.speaker.name}
-            wikiUrl={event.speaker.url}
-          >
-            <Text>{event.speaker.bio}</Text>
-          </SpeakerModal>
+          {event.speaker && (
+            <SpeakerModal
+              open={modalOpen}
+              onClose={toggleModal}
+              imageUrl={event.speaker.image}
+              title={event.speaker.name}
+              wikiUrl={event.speaker.url}
+            >
+              <Text>{event.speaker.bio}</Text>
+            </SpeakerModal>
+          )}
         </Layout.Content>
       ) : null}
     </Layout>
