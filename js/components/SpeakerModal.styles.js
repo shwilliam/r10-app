@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#000',
     paddingVertical: THEME.SPACING.VERTICAL,
-    paddingHorizontal: THEME.SPACING.HORIZONTAL,
     height: Dimensions.get('window').height,
   },
   contentContainer: {
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
     marginTop: THEME.SPACING.VERTICAL,
     marginBottom: THEME.SPACING.VERTICAL * 10,
     paddingVertical: THEME.SPACING.VERTICAL,
-    paddingHorizontal: THEME.SPACING.HORIZONTAL / 2,
+    paddingHorizontal: THEME.SPACING.HORIZONTAL / 4,
   },
 })
 
