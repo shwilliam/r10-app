@@ -1,23 +1,23 @@
 import {formatTimestamp} from './index'
 
 const groupEventsByTime = (headers, session) => {
+  const headersCopy = [...headers]
   const formattedTime = formatTimestamp(session.startTime)
-  const sectionIndex = headers.findIndex(
+  const sectionIndex = headersCopy.findIndex(
     ({title}) => title === formattedTime,
   )
 
   if (sectionIndex === -1)
     return [
-      ...headers,
+      ...headersCopy,
       {
         title: formattedTime,
         data: [session],
       },
     ]
 
-  headers[sectionIndex].data.push(session)
-
-  return headers
+  headersCopy[sectionIndex].data.push(session)
+  return headersCopy
 }
 
 export default groupEventsByTime
