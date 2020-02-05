@@ -52,34 +52,36 @@ const Session = ({navigation, ...props}) => {
               <Text>{event.description}</Text>
             </Section>
 
-            {event.speaker && (
-              <Section>
-                <Subtitle>Presented by:</Subtitle>
-                <TouchableOpacity
-                  onPress={toggleModal}
-                  style={styles.sessionSpeakerCard}
-                >
-                  <Image src={event.speaker.image} size="s" />
+            <Section>
+              {event.speaker && (
+                <>
+                  <Subtitle>Presented by:</Subtitle>
+                  <TouchableOpacity
+                    onPress={toggleModal}
+                    style={styles.sessionSpeakerCard}
+                  >
+                    <Image src={event.speaker.image} size="s" />
 
-                  <ReactText style={styles.sessionSpeakerCardTitle}>
-                    {event.speaker.name}
-                  </ReactText>
-                </TouchableOpacity>
+                    <ReactText style={styles.sessionSpeakerCardTitle}>
+                      {event.speaker.name}
+                    </ReactText>
+                  </TouchableOpacity>
+                </>
+              )}
 
-                <Button
-                  onPress={() =>
-                    favorites && favorites.includes(id)
-                      ? removeFavorite(id)
-                      : addFavorite(id)
-                  }
-                >
-                  {favorites && favorites.includes(id)
-                    ? 'Remove from'
-                    : 'Add to'}{' '}
-                  favorites
-                </Button>
-              </Section>
-            )}
+              <Button
+                onPress={() =>
+                  favorites && favorites.includes(id)
+                    ? removeFavorite(id)
+                    : addFavorite(id)
+                }
+              >
+                {favorites && favorites.includes(id)
+                  ? 'Remove from'
+                  : 'Add to'}{' '}
+                favorites
+              </Button>
+            </Section>
           </View>
           {event.speaker && (
             <SpeakerModal
